@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/__match.css">
+</head>
+
+<body>
+    <!-- <p id="demo" class="elem"></p>
+    <button onclick="click_button(s)"> check </button>
+    <button onclick="click_button_glo()"> check globally </button> -->
+    <div class="form-container">
+        <div class="header-form">
+
+            <h1> form </h1>
+        </div>
+        <form name="myforms" onsubmit="return valid_form()">
+            <label> username </label>
+            <input name="username" type="text" class="form-control" id="username">
+            <small id="username-alert" style="display:none;color: aliceblue;font-size:1.1rem;">fill username</small>
+            <label for="">password</label>
+            <input type="password" class="form-control" id="password">
+            <small id="password-alert" style="display:none;color: rgb(255, 255, 255);font-size:1.1rem;"> fill password</small>
+            <small id="length-alert" style="display:none;color: rgb(255, 255, 255);font-size:1.1rem;">password length more then 8 </small>
+            <small id="pattern-alert" style="display:none;color: rgb(255, 255, 255);font-size:1.1rem;">match pattern include number </small>
+
+            <input type="submit" value="submit" class="login-btn">
+
+        </form>
+    </div>
+    <script src="./js/__match.js">
+    </script>
+</body>
+
+</html>

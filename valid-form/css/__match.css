@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgb(23, 111, 131);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    overflow: hidden;
+}
+
+.header-form {
+    background-color: rgb(3, 56, 70);
+    padding: 12px 16px;
+    color: aliceblue;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-transform: capitalize;
+}
+
+form {
+    background: rgb(2, 38, 39);
+    width: 100%;
+    padding: 10px 20px;
+    border-bottom-left-radius: 50%;
+}
+
+form label {
+    color: rgb(247, 247, 247);
+    font-size: 20px;
+    text-transform: capitalize;
+    letter-spacing: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 5px 5px;
+}
+
+.login-btn {
+    outline: 0;
+    border: 0;
+    padding: 5px 10px;
+    font-size: 1rem;
+    background-color: rgb(13, 141, 155);
+    color: rgb(235, 235, 235);
+    text-transform: capitalize;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.login-btn:hover {
+    opacity: 1;
+}
