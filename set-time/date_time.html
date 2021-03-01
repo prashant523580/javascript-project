@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show-time"></div>
+    <script>
+        const time_date = document.querySelector("#show-time");
+
+        const show_time = () =>{
+           // setTimeout(() =>{
+                var date_now = new Date();
+                time_date.innerHTML = date_now.toLocaleTimeString();
+           // },1000);
+        }
+       // show_time();
+        setInterval(show_time,1000);
+    </script>
+</body>
+</html>

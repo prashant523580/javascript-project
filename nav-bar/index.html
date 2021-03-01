@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .stylesMy{
+            background: blue;
+            height: 100px;
+            width: 100%;
+            transition: all 2s;
+        }
+    </style>
+</head>
+ <body>
+   <!-- <nav>
+        <div class="nav-center">
+                <div class="nav-logo">
+            </div>
+            <button class="toggle-btn">toggle</button>
+        </div>
+            <div class="links">
+                <a href="">home </a><a href="">about</a><a href="">contact</a>
+            </div>
+    </nav> -->
+    <button onclick="clickFun()"> click</button>
+    <div class="content">
+        
+    </div>
+
+    <script>
+        function clickFun(){
+            const contents = document.querySelector(".content");
+            console.log(contents.classList.contains("stylesMy"));
+                if(contents.classList.contains("stylesMy")){
+                    contents.classList.remove("stylesMy");
+                }else{
+                    contents.classList.add("stylesMy");
+                }
+        }
+    </script>
+</body>
+</html>

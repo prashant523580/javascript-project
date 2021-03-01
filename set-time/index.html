@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        .container{
+            position: relative;
+            width: 400px;
+            margin: auto;
+            height: 150px;
+            border: 3px solid gray;
+        }
+        .content{
+            position: absolute;
+            height: 100%;
+            border-right: 2px solid gray;
+            display: none;
+        }
+        .content:nth-child(1)
+        {
+            width: 20%;
+        }
+        .content:nth-child(2)
+        {
+            width: 40%;
+        }
+        .content:nth-child(3)
+        {
+            width: 60%;
+        }
+        .content:nth-child(4)
+        {
+            width: 80%;
+        }
+        .content:nth-child(5)
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+    </div>
+<script src="./src/animate.js">
+</script>
+</body>
+</html>

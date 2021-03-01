@@ -1,0 +1,11 @@
+article{
+    margin: 0 auto;
+}
+.image-content{
+    width: 200px;
+    height: 200px;
+}
+.image-content img{
+    width: 100%;
+    height: 100%;
+}

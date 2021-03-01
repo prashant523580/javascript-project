@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="counter-container">
+        <div class="counter" data-target="4000">
+
+        </div>
+    </div>
+    <div class="counter-container">
+        <div class="counter" data-target="14000">
+
+        </div>
+    </div>
+    <div class="counter-container">
+        <div class="counter" data-target="42000">
+
+        </div>
+    </div>
+    <script>
+        const counter = document.querySelectorAll('.counter');
+        counter.forEach((count) =>{
+            console.log(count);
+            count.innerHTML = 0;
+            function updateCounter(){
+                const tar_count = +count.getAttribute('data-target');
+                console.log(tar_count);
+
+                const starting_count = +count.innerHTML;
+                console.log(starting_count);
+               const incr_count = tar_count / 100;
+                console.log(incr_count);
+               if(starting_count < tar_count){
+                   count.innerHTML = `${Math.round(starting_count + incr_count)}`;
+                   setTimeout(updateCounter, 20)
+                }else{
+                    count.innerHTML = tar_count;
+               }
+            }
+            updateCounter();
+        });
+    </script>
+</body>
+</html>
