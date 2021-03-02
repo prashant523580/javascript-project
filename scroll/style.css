@@ -16,13 +16,11 @@ header nav{
     width: 100%;
 
 }
-header nav .nav-center .nav-header{
-    width: 100%;
-}
+
 header nav .nav-center .nav-header .logo{
     float: left;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-color: rgb(2, 27, 48);
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -33,9 +31,45 @@ header nav .nav-center .nav-header .logo{
 
 header nav .nav-center .nav-header button{
     float: right;
+    outline: 0;
+    border: 0;
+    background-color: inherit;
     display: none;
+    cursor: pointer;
 }
-
+header nav .nav-center .nav-header button .line{
+    width: 35px;
+    height: 5px;
+    margin-top: 2px;
+    background-color: rgb(254, 254, 254);
+    transition: .2s ease;
+    -webkit-transition: .2s ease;
+    -moz-transition: .2s ease;
+    -ms-transition: .2s ease;
+    -o-transition: .2s ease;
+    /* border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px; */
+}
+ .change .line:nth-child(1){
+    transform: translate(0,10px) rotate(-45deg);
+    -webkit-transform: translate(0,10px) rotate(-45deg);
+    -moz-transform: translate(0,10px) rotate(-45deg);
+    -ms-transform: translate(0,10px) rotate(-45deg);
+    -o-transform: translate(0,10px) rotate(-45deg);
+}
+ .change .line:nth-child(2){
+    opacity: 0;
+  } 
+  .change .line:nth-child(3){
+    transform:translate(-0px,-4px) rotate(45deg);
+    -webkit-transform:translate(-0px,-4px) rotate(45deg);
+    -moz-transform:translate(-0px,-4px) rotate(45deg);
+    -ms-transform:translate(-0px,-4px) rotate(45deg);
+    -o-transform:translate(-0px,-4px) rotate(45deg);
+}
 header nav .nav-center .link-container ul{
     display: flex;
     justify-content: space-evenly;
@@ -66,11 +100,26 @@ footer{
 }
 .top-btn
 {
+    position: fixed;
+    bottom: 5%;
+    right: 10%;
+    display: none;
     text-decoration: none;
 
 }
-
+.show-btn{
+    display: block;
+}
+.fix-nav{
+   background: rgb(43, 116, 155);
+ 
+}
 @media screen and (max-width: 900px){
+    header nav .nav-center .nav-header{
+        /* width: 100%; */
+        display: flex;
+        justify-content: space-between;
+    }
     header nav .nav-center .nav-header button{
         display: block;
         
@@ -81,7 +130,7 @@ footer{
     }
     header nav .nav-center .link-container{
         overflow: hidden;
-        height: 0;
+      height: 0;
         transition: .2s ease;
         -webkit-transition: .2s ease;
         -moz-transition: .2s ease;
