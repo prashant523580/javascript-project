@@ -25,11 +25,12 @@
     <script>
         const counter = document.querySelectorAll('.counter');
         counter.forEach((count) =>{
-            console.log(count);
+            console.log(count.DOCUMENT_NODE);
             count.innerHTML = 0;
             function updateCounter(){
+            
                 const tar_count = +count.getAttribute('data-target');
-                console.log(tar_count);
+                //console.log(tar_count + " c");
 
                 const starting_count = +count.innerHTML;
                 console.log(starting_count);
