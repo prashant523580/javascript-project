@@ -1,0 +1,43 @@
+ul{
+    width: 300px;
+    list-style: none;
+    background-color: blue;
+    color: white;
+    margin: 0 auto;
+}
+ul li ul {
+    background-color: cadetblue;
+}
+.toggle{
+    cursor: pointer;
+    user-select: none;
+    display: none;
+}
+label{
+display: flex;
+align-items: center;
+}
+.nested{
+    display: none;
+
+}
+.nested-menu{
+    
+
+}
+.nested-menu-inner{
+    background-color: rgb(9, 94, 65);
+}
+.toggle:checked  ~ .nested{
+    display: block;
+}
+.toggle:checked ~   label .icon  {
+    transform: rotate(90deg);
+}
+li{
+    cursor: pointer;
+}
+
+ul li{
+    padding: 1rem 1rem;
+}

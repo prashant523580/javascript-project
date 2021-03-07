@@ -5,38 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .toggle{
-            cursor: pointer;
-            user-select: none;
-            display: none;
-        }
-    label{
-        display: flex;
-        align-items: center;
-    }
-    .nested{
-            display: none;
-        }
-        .toggle:checked  ~ .nested{
-            display: block;
-        }
-        .toggle:checked ~   label .icon  {
-            transform: rotate(90deg);
-        }
-        li{
-            cursor: pointer;
-        }
-    </style>
+  <link rel="stylesheet" href="./style.css" type="text/css">
 </head>
 <body>
     <ul id="main-ul">
         <li>list 1</li>
-        <li><input type="checkbox" class="toggle" id="list2">  <label for="list2">  list 2 <span class="icon"> > </span> </label> 
+        <li class="nested-menu"><input type="checkbox" class="toggle" id="list2">  <label for="list2">  list 2 <span class="icon"> > </span> </label> 
             <ul class="nested">
                 <li> 2 : 1</li>
                 <li> 2 : 2</li>
-                <li> <input type="checkbox" class="toggle" id="inside-list2"> <label for="inside-list2">  2 : 3 <span class="icon"> > </span> </label> 
+                <li class="nested-menu-inner"> <input type="checkbox" class="toggle" id="inside-list2"> <label for="inside-list2">  2 : 3 <span class="icon"> > </span> </label> 
                     <ul class="nested">
                         <li>2 : 3 : 1 </li>
                         <li>2 : 3 : 2 </li>
@@ -47,7 +25,7 @@
                 <li> 2 : 4</li>
             </ul>
         </li>
-        <li> <input type="checkbox" class="toggle" id="list3"> <label for="list3"> list 3  <span class="icon"> > </span> </label> 
+        <li class="nested-menu"> <input type="checkbox" class="toggle" id="list3"> <label for="list3"> list 3  <span class="icon"> > </span> </label> 
             <ul class="nested">
                 <li>3 : 1</li>
             </ul>
