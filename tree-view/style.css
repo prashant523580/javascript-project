@@ -24,7 +24,7 @@ ul li ul li  {
     background-color: none;
 }
 ul li ul li ul{
-    background-color: rgb(2, 43, 44);
+    /* background-color: rgb(9, 87, 110); */
 }
 ul li{
     padding: .8rem .8rem;
@@ -36,14 +36,13 @@ ul li ul li ul li.nested-menu-inner {
     background-color: teal;
 }
 ul li ul li ul li ul.nested  {
-    background-color: rgb(7, 87, 36);
+    /* background-color: rgb(7, 87, 36); */
 }
 ul li ul li ul li ul li{
     background-color: rgb(5, 58, 41);
 }
 .toggle{
-    /* cursor: pointer; */
-    /* user-select: none; */
+
     display: none;
 }
 label{
