@@ -11,6 +11,11 @@ ul{
     background-color: rgb(63, 9, 9);
     color: white;
     margin: 0 auto;
+    user-select: none;
+}
+li{
+ 
+    margin-top: .1rem;
 }
 ul li ul li  {
     background-color: rgb(4, 60, 61);
@@ -18,21 +23,37 @@ ul li ul li  {
 ::selection{
     background-color: none;
 }
-ul li ul li ul li{
+ul li ul li ul{
+    background-color: rgb(2, 43, 44);
+}
+ul li{
+    padding: .8rem .8rem;
+}
+ul li ul li ul li.nested-menu-inner  {
     background-color: rgb(3, 58, 58);
 }
+ul li ul li ul li.nested-menu-inner {
+    background-color: teal;
+}
+ul li ul li ul li ul.nested  {
+    background-color: rgb(7, 87, 36);
+}
+ul li ul li ul li ul li{
+    background-color: rgb(5, 58, 41);
+}
 .toggle{
-    cursor: pointer;
-    user-select: none;
+    /* cursor: pointer; */
+    /* user-select: none; */
     display: none;
 }
 label{
 display: flex;
 align-items: center;
+cursor: pointer;
 }
 .nested{
     display: none;
-
+    /* text-align: center; */
 }
 
 .nested-menu-inner{
@@ -48,14 +69,4 @@ align-items: center;
     -ms-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
 }
-li{
-    cursor: pointer;
-    margin-top: .1rem;
-}
 
-ul li ul li ul{
-    background-color: rgb(2, 43, 44);
-}
-ul li{
-    padding: .8rem .8rem;
-}
