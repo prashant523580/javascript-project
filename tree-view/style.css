@@ -1,12 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#main-ul{
+    overflow: hidden;
+}
 ul{
     width: 300px;
     list-style: none;
-    background-color: blue;
+    background-color: rgb(63, 9, 9);
     color: white;
     margin: 0 auto;
 }
-ul li ul {
-    background-color: cadetblue;
+ul li ul li  {
+    background-color: rgb(4, 60, 61);
+}
+::selection{
+    background-color: none;
+}
+ul li ul li ul li{
+    background-color: rgb(3, 58, 58);
 }
 .toggle{
     cursor: pointer;
@@ -21,10 +34,7 @@ align-items: center;
     display: none;
 
 }
-.nested-menu{
-    
 
-}
 .nested-menu-inner{
     background-color: rgb(9, 94, 65);
 }
@@ -32,12 +42,20 @@ align-items: center;
     display: block;
 }
 .toggle:checked ~   label .icon  {
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
 }
 li{
     cursor: pointer;
+    margin-top: .1rem;
 }
 
+ul li ul li ul{
+    background-color: rgb(2, 43, 44);
+}
 ul li{
-    padding: 1rem 1rem;
+    padding: .8rem .8rem;
 }
