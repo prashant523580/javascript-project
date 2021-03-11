@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="tab-container">
+            
+            <div id="recent" class="tab-content">recent</div>
+            <!-- content=============================================== -->
+            <div id="all-songs" class="tab-content">
+                <div class="content">
+                   
+
+                </div>
+                <ul>
+                    <li onclick="loadSong()">song 1</li>
+                    <li>song 1</li>
+                    <li>song 1</li>
+                </ul>
+
+            </div>
+            <!-- end-content================================================== -->
+            <div id="album" class="tab-content">album</div>
+            <div id="library" class="tab-content">library</div>
+            <div id="setting" class="tab-content">more</div>
+        </div>
+            <div class="button-container">
+            <button id="defaultOpen" onclick="openContent('recent', this, 'green')">recent</button>
+            <button onclick="openContent('all-songs',this, 'green')">all songs</button>
+            <button onclick="openContent('album',this, 'green')">albums</button>
+            <button onclick="openContent('library',this, 'green')">library</button>
+            <button onclick="openContent('setting',this, 'green')">setting</button>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

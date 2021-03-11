@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-container{
+    background-color: aquamarine;
+}
+.main-container .tab-container{
+  
+    
+    height: 90vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-container .tab-container .tab-content{
+    width: 100%;
+    text-align: center;
+    display: none;
+   
+
+}
+.tab-content ul{
+list-style: none;
+
+}
+.tab-content .content{
+    overflow-Y:auto;
+}
+.content a{
+    text-decoration: none;
+    position: relative;
+}
+.content .tooltip{
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 40px;
+    padding: 20px;
+    background-color: rgb(26, 90, 90);
+    display: none;
+    z-index: 1;
+}
+.content a:hover  .tooltip{
+    
+  display: block;
+}
+.tab-content ul li{
+    padding: 1rem 1.2rem;
+    background-color: black;
+    color: aliceblue;
+    margin-top:.1rem ;
+}
+.main-container .button-container{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-container .button-container button{
+    outline: none;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    text-align: center;
+    text-transform: capitalize;
+}
