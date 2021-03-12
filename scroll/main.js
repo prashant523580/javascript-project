@@ -10,4 +10,4 @@ const menu_btn = document.querySelector(".toggle-btn");
 
 menu_btn.addEventListener("click", () =>{
     link_container.classList.toggle("show-height");
-});
+})
