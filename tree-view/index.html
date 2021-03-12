@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="./style.css" type="text/css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+  integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+  crossorigin="anonymous"/>
+</head>
+<body>
+    <ul id="main-ul">
+        <li>list 1</li>
+        <li class="nested-menu"><input type="checkbox" class="toggle" id="list2"> 
+             <label for="list2"> <span>  list 2</span>  <span class="icon"> <i class="fas fa-chevron-circle-right"></i> </span> </label> 
+             <ul class="nested">
+             <li draggable="true"> 2 : 1</li>
+                <li draggable="true"> 2 : 2</li>
+                <li draggable="true" class="nested-menu-inner"> <input type="checkbox" class="toggle" id="inside-list2">
+                     <label for="inside-list2"> <span> 2 : 3</span> <span class="icon"> <i class="fas fa-chevron-circle-right"></i> </span> </label> 
+                    <ul class="nested">
+                        <li draggable="true">2 : 3 : 1 </li>
+                        <li draggable="true">2 : 3 : 2 </li>
+                        <li draggable="true" class="nested-menu-inner">
+                            <input type="checkbox" class="toggle" id="list2-inner">
+                            <label for="list2-inner">
+                                <span>  2 : 3 : 3</span>
+                                <span class="icon"> <i class="fas fa-chevron-circle-right"></i></span>
+                            </label>
+
+                        <ul class="nested">
+                            <li draggable="true">2:3:3:1</li>
+                            <li draggable="true">2:3:3:2</li>
+                            <li draggable="true">2:3:3:3</li>
+                        </ul>
+                        </li>
+                        <li>2 : 3 : 4 </li>
+                    </ul>
+                </li>
+                <li> 2 : 4</li>
+            </ul>
+        </li>
+        <li class="nested-menu">
+             <input type="checkbox" class="toggle" id="list3">
+              <label for="list3"> 
+                  <span> list 3</span>  
+                   <span class="icon"> <i class="fas fa-chevron-circle-right"></i> </span> 
+                </label> 
+            <ul class="nested">
+                <li>3 : 1</li>
+                <li>3 : 2</li>
+                <li>3 : 3</li>
+                <li class="nested-menu-inner">
+                    <input type="checkbox" class="toggle" id="list3-inner" >
+                    <label for="list3-inner">
+                        3 : 4
+                        <span class="icon"> <i class="fas fa-chevron-circle-right"></i></span>
+                    </label>
+                    <ul class="nested">
+                        <li> 3 : 4 : 1</li>
+                        <li> 3 : 4 : 2</li>
+                    </ul>
+                </li>
+                <li>3 : 5</li>
+            </ul>
+        </li>
+        <li>list 4</li>
+    </ul>
+
+    <script src="./main.js">
+
+    </script>
+
+</body>
+</html>

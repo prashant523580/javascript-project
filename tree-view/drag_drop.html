@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <style>
+        .over {
+  transform: scale(1.1, 1.1);
+  color: red;
+}
+    </style>
+</head>
+<body>
+
+    <div class="list">
+        <input type="text" class="input" placeholder="add items ">
+        <span class="add">+</span>
+    </div>
+    <ul id="main">
+        <li  class="draggable" draggable="true"> 1</li>
+        <li class="draggable" draggable="true"> 34</li>
+        <li class="draggable" draggable="true"> 2</li>
+        <li class="draggable" draggable="true"> 3</li>
+        <li class="draggable" draggable="true"> 32</li>
+        <li  class="draggable" draggable="true"> 21</li>
+        
+    </ul>
+    <script>
+        // window.addEventListener("load", () =>{
+        //     var items = document.querySelectorAll("#main li");
+        //     dragged = null;
+        //     for(let i of items){
+        //         i.addEventListener("dragstart", () => {
+        //             dragged = this;
+        //         })
+        //         i.addEventListener("dragend", () =>{
+        //             for(let j of items){
+        //                 console.log(j);
+        //             }
+        //         })
+        //         i.addEventListener("dragover", (evt) => {
+        //             evt.preventDefault();
+        //         }) 
+        //         i.addEventListener("drop", (evt) => {
+        //             evt.preventDefault();
+                   
+        //         })
+        //     }
+        // })
+        window.addEventListener("load", () => {
+
+            var btn = document.querySelector(".add");
+            var removes = document.querySelector(".draggable");  
+            let dragStart  = function(e) {
+                // this.style.opacity = '0.4';
+                drgSrcEl = this;
+                e.dataTransfer.effectAllowed = 'move';
+                e.dataTransfer.setData('text/html', this.innerHTML);
+            }           
+            let dragEnter = function (e) {
+                this.classList.add("over");
+                console.log(this)
+        }
+            let dragLeave = (e) => {
+                e.stopPropagation();
+                this.classList.add("over");
+        }
+            let dragOver = (e) => {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+            return false;
+        }
+            let dropItem = (e) => {
+            if(drgSrcEl != this){
+                drgSrcEl.innerHTML = this.innerHTML;
+                this.innerHTML = e.dataTransfer.getData("text/html");
+            }
+            return false;
+        }
+            let dragEnd = (e) => {
+            var itemss = document.querySelectorAll(".draggable");
+            itemss.forEach.call(itemss, (itm) => {
+                itm.classList.remove("over");
+                // console.log(this.item);
+            });
+            // this.style.opacity = '1';
+            
+        }
+        
+    var addEventDragDrop = (el) => {
+            el.addEventListener("dragstart", dragStart, false);
+            el.addEventListener("dragenter", dragEnter, false);
+            el.addEventListener("dragleave", dragLeave, false);
+            el.addEventListener("dragover", dragOver, false);
+            el.addEventListener("drop", dropItem , false);
+            el.addEventListener("dragend", dragEnd, false);
+        }
+        let items = document.querySelectorAll(".draggable");
+        items.forEach.call(items,(item) =>   {
+            addEventDragDrop(item);
+        })
+
+        btn.addEventListener("click", function() {
+            var addItems = document.querySelector(".input").value;
+
+            var li = document.createElement("li");
+            var attr = document.createAttribute("draggable");
+            var ul = document.querySelector('ul');
+            li.className = "dargable";
+            attr.value = "true";
+            li.setAttributeNode(attr);
+            li.appendChild(document.createTextNode(addItems));
+            ul.appendChild(li);
+            addEventDragDrop(li);
+        });
+    })
+  
+        </script>
+</body>
+</html>
