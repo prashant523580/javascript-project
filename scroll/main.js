@@ -5,12 +5,10 @@ footerDate.innerHTML = d.getFullYear();
 
 const link_container = document.querySelector(".link-container");
 const link_content = document.querySelector(".nav-links");
-const link = document.querySelector(".nav-link");
-const menu_btn = document.querySelector(".toggle-btn");
-const lines = document.querySelectorAll(".line")
-;function menu_icon(e){
-e.classList.toggle("change");
-}
+const link_scroll = document.querySelectorAll(".nav-link");
+const menu_btn  = document.querySelector(".toggle-btn");
+const lines = document.querySelectorAll(".line");
+
 
 menu_btn.addEventListener("click", () =>{
 
@@ -24,7 +22,7 @@ menu_btn.addEventListener("click", () =>{
     if(container_height == "0"){
         link_container.classList.add("show-height");
     }else{
-        link_container.classList.remove(("show-height"));
+        link_container.classList.remove("show-height");
     }
 
     const link_height = link_content.getBoundingClientRect().height;
@@ -35,7 +33,9 @@ menu_btn.addEventListener("click", () =>{
        
     //     link_container.style.height = 0;
     // }
-
+    function menu_icon(e){
+        e.classList.toggle("change");
+        }
 });
 
 const topBtn = document.querySelector(".top-btn");
@@ -56,3 +56,34 @@ window.addEventListener('scroll', () => {
         topBtn.classList.remove("show-btn");
     }
 })
+// window.addEventListener("click", () => {
+//     link_container.classList.remove('show-height')
+// })
+link_scroll.forEach((links) => {
+    links.addEventListener("click", (e) => {
+        // console.log(e.preventDefault())
+        e.preventDefault();
+        //navigate tp specific links
+        const id = e.currentTarget.getAttribute('href').slice(1);
+        console.log(id);
+        const element = document.getElementById(id);
+        // calculate the height 
+        const nav_height = nav.getBoundingClientRect().height;
+
+        const container_height = link_container.getBoundingClientRect().height;
+        const fixNav = nav.classList.contains("fix-nav")
+        let position =  element.offsetTop - nav_height;
+        console.log(position)
+        if(!fixNav){
+            position = position - nav_height;
+        }
+        if(nav_height > 82){
+            position = position + container_height;
+        }
+        window.scrollTo({
+            left: 0,
+             top: position,
+        });
+        link_container.style.height = 0;
+    });
+});
