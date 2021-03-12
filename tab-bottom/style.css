@@ -26,7 +26,7 @@ list-style: none;
 
 }
 .tab-content .content{
-    overflow-Y:auto;
+    /* overflow-Y:auto; */
 }
 .content a{
     text-decoration: none;
