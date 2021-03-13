@@ -11,6 +11,10 @@ const lines = document.querySelectorAll(".line");
 
 
 menu_btn.addEventListener("click", () =>{
+<<<<<<< HEAD
+    link_container.classList.toggle("show-height");
+})
+=======
 
     // link_container.classList.toggle("show-height");
     // method 2
@@ -56,6 +60,7 @@ window.addEventListener('scroll', () => {
         topBtn.classList.remove("show-btn");
     }
 })
+<<<<<<< HEAD
 // window.addEventListener("click", () => {
 //     link_container.classList.remove('show-height')
 // })
@@ -87,3 +92,6 @@ link_scroll.forEach((links) => {
         link_container.style.height = 0;
     });
 });
+=======
+>>>>>>> cfca452c0124c101a6690f8a7115fa23a57733c0
+>>>>>>> e5a9caf5f4ad7a9d0b91381b195abd6bab16f840

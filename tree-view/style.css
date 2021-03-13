@@ -2,26 +2,55 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: 'Courier New', Courier, monospace;
 }
 #main-ul{
-    /*overflow: hidden;*/
+    overflow: hidden;
     border-radius: 10px;
     
 }
 ul{
-    width: 300px;
+    width: 260px;
     list-style: none;
-    background-color: rgb(1, 74, 100);
-    color: white;
-    margin: 0 auto;
+    background-color: rgb(216, 216, 216);
+    color: rgb(12, 50, 61);
+    /* margin: 0 auto; */
     user-select: none;
+  
+  
 }
 li{
     text-transform: capitalize;
-    margin-top: .1rem;
+    /* margin-top: .5rem; */
+    border-radius: 14px;
+    font-size: large;
+    transition: .2s ease-in-out;
+}
+li:hover{
+    /* background-color: rgb(121, 137, 145); */
+    color: rgb(12, 73, 75);
+}
+ul li ul{
+   /* box-shadow: 3px 1px 4px 1px rgba(0, 0, 0, 0.5); */
+    /* border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px; */
+    margin: 1rem 0;
+    /* border: 2px dashed rgb(17, 143, 130); */
+    border-top: 2px solid rgb(12, 10, 10) ;
+    background-color: seashell;
+    border-bottom: 2px solid  rgb(28, 19, 19);
+    
+}
+ul li ul:hover{
+    border-top: 2px solid  gray;
+    border-bottom: 2px solid gray;
 }
 ul li ul li  {
-    background-color: rgb(4, 60, 61);
+    /* background-color: rgb(102, 106, 106); */
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -31,34 +60,26 @@ ul li ul li  {
 ::selection{
     background-color: none;
 }
-ul li ul{
-   box-shadow: 3px 1px 4px 1px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    margin: 1rem .3rem;
-    
-}
 ul li{
     padding: .8rem .8rem;
 }
 ul li ul li ul li.nested-menu-inner  {
-    background-color: rgb(68, 7, 7);
+    /* background-color: rgb(184, 181, 181); */
 
 }
 
 ul li ul li ul li ul.nested  {
-    /* background-color: rgb(7, 87, 36); */
+    /* background-color: rgb(19, 153, 68); */
 }
 ul li ul li ul li ul li{
-    background-color: rgb(55, 3, 9);
+    /* background-color: rgb(236, 231, 231); */
+    
    
 }
 .toggle{
 
     display: none;
+    transition: all .3s ease;
 }
 label{
 display: flex;
@@ -77,19 +98,27 @@ label span:first-child{
 label span:last-child{
     right: 10%;
 } */
+
 .nested{
     display: none;
+    width: 100%;
+    /* transform: scale(0); */
+    /* margin: auto auto; */
     /* text-align: center; */
+    /* transition: .3s ease-in-out; */
 }
 
+
 .nested-menu-inner{
-    background-color: rgb(9, 94, 65);
+    /* background-color: rgb(9, 94, 65); */
 }
 
 .toggle:checked  ~ .nested{
     display: block;
+    /* transform: scale(1); */
 }
 .toggle:checked ~   label .icon  {
+   
     transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
@@ -97,3 +126,6 @@ label span:last-child{
     -o-transform: rotate(90deg);
 }
 
+.icon{
+    transition: .1s ease-in-out;
+}
