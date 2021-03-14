@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="./style.css" type="text/css">
     <style>
         .over {
   transform: scale(1.1, 1.1);
@@ -20,96 +21,67 @@
         <span class="add">+</span>
     </div>
     <ul id="main">
-        <li  class="draggable" draggable="true"> 1</li>
+        <li class="draggable" draggable="true"> 1</li>
         <li class="draggable" draggable="true"> 34</li>
         <li class="draggable" draggable="true"> 2</li>
         <li class="draggable" draggable="true"> 3</li>
         <li class="draggable" draggable="true"> 32</li>
-        <li  class="draggable" draggable="true"> 21</li>
+        <li class="draggable" draggable="true"> 21</li>
         
     </ul>
     <script>
-        // window.addEventListener("load", () =>{
-        //     var items = document.querySelectorAll("#main li");
-        //     dragged = null;
-        //     for(let i of items){
-        //         i.addEventListener("dragstart", () => {
-        //             dragged = this;
-        //         })
-        //         i.addEventListener("dragend", () =>{
-        //             for(let j of items){
-        //                 console.log(j);
-        //             }
-        //         })
-        //         i.addEventListener("dragover", (evt) => {
-        //             evt.preventDefault();
-        //         }) 
-        //         i.addEventListener("drop", (evt) => {
-        //             evt.preventDefault();
-                   
-        //         })
-        //     }
-        // })
         window.addEventListener("load", () => {
 
             var btn = document.querySelector(".add");
-            var removes = document.querySelector(".draggable");  
-            let dragStart  = function(e) {
+            var removes = document.querySelector(".draggable"); 
+            let dragging ;
+             function dragStart(e) {
                 // this.style.opacity = '0.4';
-                drgSrcEl = this;
+                dragging = e.target;
                 e.dataTransfer.effectAllowed = 'move';
-                e.dataTransfer.setData('text/html', this.innerHTML);
-            }           
-            let dragEnter = function (e) {
-                this.classList.add("over");
-                console.log(this)
+                e.dataTransfer.setData('text/html', e.target.innerHTML);
+            }
+            function dragEnter  (e) {
+             
+                console.log()
         }
-            let dragLeave = (e) => {
+            function dragLeave  (e) {
                 e.stopPropagation();
                 this.classList.add("over");
         }
-            let dragOver = (e) => {
+            function dragOver (e) {
             e.preventDefault();
             e.dataTransfer.dropEffect = 'move';
-            return false;
+           
         }
-            let dropItem = (e) => {
-            if(drgSrcEl != this){
-                drgSrcEl.innerHTML = this.innerHTML;
-                this.innerHTML = e.dataTransfer.getData("text/html");
-            }
-            return false;
+            function dropItem(e) {
+                e.preventDefault();
+                dragging.innerHTML = e.target.innerHTML;
+                e.target.innerHTML = e.dataTransfer.getData("html/text");
         }
-            let dragEnd = (e) => {
-            var itemss = document.querySelectorAll(".draggable");
-            itemss.forEach.call(itemss, (itm) => {
-                itm.classList.remove("over");
-                // console.log(this.item);
-            });
-            // this.style.opacity = '1';
-            
+        function dragEnd(){
+            console.log("drag End ");
         }
-        
     var addEventDragDrop = (el) => {
-            el.addEventListener("dragstart", dragStart, false);
-            el.addEventListener("dragenter", dragEnter, false);
-            el.addEventListener("dragleave", dragLeave, false);
-            el.addEventListener("dragover", dragOver, false);
-            el.addEventListener("drop", dropItem , false);
-            el.addEventListener("dragend", dragEnd, false);
+            el.addEventListener("dragstart", dragStart);
+            el.addEventListener("dragenter", dragEnter);
+            el.addEventListener("dragleave", dragLeave);
+            el.addEventListener("dragover", dragOver);
+            el.addEventListener("drop", dropItem);
+            el.addEventListener("dragend", dragEnd);
         }
         let items = document.querySelectorAll(".draggable");
         items.forEach.call(items,(item) =>   {
             addEventDragDrop(item);
+            console.log(item)
         })
-
         btn.addEventListener("click", function() {
             var addItems = document.querySelector(".input").value;
 
             var li = document.createElement("li");
             var attr = document.createAttribute("draggable");
             var ul = document.querySelector('ul');
-            li.className = "dargable";
+            li.className = "draggable";
             attr.value = "true";
             li.setAttributeNode(attr);
             li.appendChild(document.createTextNode(addItems));
@@ -117,7 +89,6 @@
             addEventDragDrop(li);
         });
     })
-  
         </script>
 </body>
 </html>

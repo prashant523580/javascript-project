@@ -26,6 +26,7 @@ li{
     border-radius: 14px;
     font-size: large;
     transition: .2s ease-in-out;
+  
 }
 li:hover{
     /* background-color: rgb(121, 137, 145); */
@@ -40,14 +41,14 @@ ul li ul{
     -o-border-radius: 10px; */
     margin: 1rem 0;
     /* border: 2px dashed rgb(17, 143, 130); */
-    border-top: 2px solid rgb(12, 10, 10) ;
+    border-bottom: 2px solid gray;
+    border-top: 2px solid  gray;
     background-color: seashell;
-    border-bottom: 2px solid  rgb(28, 19, 19);
     
 }
 ul li ul:hover{
-    border-top: 2px solid  gray;
-    border-bottom: 2px solid gray;
+    border-top: 2px solid rgb(12, 10, 10) ;
+    border-bottom: 2px solid  rgb(28, 19, 19);
 }
 ul li ul li  {
     /* background-color: rgb(102, 106, 106); */

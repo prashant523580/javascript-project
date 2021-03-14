@@ -32,8 +32,8 @@ function valid_form() {
 
     if (username !== "" && password !== "") {
         if (password_length < 8) {
-            length_error.style.display = "block";
-            pass_alert.style.display = "none";
+            // length_error.style.display = "block";
+            // pass_alert.style.display = "none";
             // user_alert.style.display = "none";
             return false;
 
@@ -44,9 +44,9 @@ function valid_form() {
             } else {
 
                 // alert("match password pattern");
-                pass_alert.style.display = "none";
-                pattern_error.style.display = "block";
-                length_error.style.display = "none";
+                // pass_alert.style.display = "none";
+                // pattern_error.style.display = "block";
+                // length_error.style.display = "none";
                 return false;
             }
         }

@@ -1,0 +1,22 @@
+.main-container{
+    
+}
+.main-container .custom-add{
+    background-color: aqua;
+    padding: .5rem .5rem;
+}
+.tasks{
+    display: flex;
+    justify-content: center;
+}
+.tasks .to-do{
+    padding: .5rem;
+    width: 50%;
+    background-color: red;
+}
+.tasks .done{
+    background-color: aquamarine;
+    width: 50%;
+    padding: .5rem;
+
+}
