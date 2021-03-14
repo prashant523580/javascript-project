@@ -1,0 +1,21 @@
+.drop-container{
+    background-color: black;
+    margin-top: 1rem;
+    padding: .4rem .5rem;
+}
+.draggable{
+    background-color: aliceblue;
+    margin: 1rem .5rem;
+    padding: .5rem .5rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    text-align: center;
+    text-transform: capitalize;
+    cursor:pointer;
+}
+.draggable.dragging{
+    opacity: .4;
+}
