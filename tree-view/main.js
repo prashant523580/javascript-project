@@ -103,7 +103,7 @@ dragItems.forEach((el) => {
 const dropContainer = document.querySelectorAll(".dropable");
 
 const overDrag = (e) => {
-    e.dataTransfer.dropEffect = "unmove";
+    e.dataTransfer.dropEffect = "move";
     e.preventDefault();
 }
 const enterDrag = (e) => {
