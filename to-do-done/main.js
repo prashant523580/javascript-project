@@ -12,7 +12,7 @@ addBtn.addEventListener("click", () => {
     elP.setAttribute("draggable", "true")
     elP.appendChild(document.createTextNode(addItem));
     to_do.appendChild(elP);
-    addItemsEvent(elP);a
+    addItemsEvent(elP);
 })
 
 
