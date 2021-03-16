@@ -15,7 +15,7 @@
     <body>
         <ul id="main-ul">
             <li>list 1</li>
-            <li class="nested-menu-inner"><input type="checkbox" class="toggle" id="list2">
+            <li draggable="true" class="nested-menu-inner"><input type="checkbox" class="toggle" id="list2">
                 <label for="list2">
                     <span>
                         list 2</span>
@@ -30,7 +30,7 @@
                         2 : 2</li>
                     <li draggable="true" class="nested-menu-inner ">
                         <input type="checkbox" class="toggle" id="inside-list2">
-                        <label draggable="true" for="inside-list2">
+                        <label draggable="false" for="inside-list2">
                             
                                 2 : 3
                             <span   class="icon">
@@ -82,7 +82,7 @@
                         2 : 4</li>
                 </ul>
             </li>
-            <li class="nested-menu">
+            <li draggable="true" class="nested-menu">
                 <input type="checkbox" class="toggle" id="list3">
                 <label for="list3">
                     <span>
