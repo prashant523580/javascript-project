@@ -1,7 +1,16 @@
-.drop-container{
+body{
+    display: flex;
+}
+.main-container{
+
     background-color: black;
-    margin-top: 1rem;
+    margin-left: 1rem;
     padding: .4rem .5rem;
+    width: 200px;
+    color: red;
+}
+.drag-container{
+    display: none;
 }
 .draggable{
     background-color: aliceblue;
@@ -15,7 +24,26 @@
     text-align: center;
     text-transform: capitalize;
     cursor:pointer;
+    /* overflow: hidden; */
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; */
 }
 .draggable.dragging{
     opacity: .4;
+}
+.drag-container  .div-child{
+    width: 80%;
+    padding: 10px 12px;
+    margin: 2px auto;
+    /* display: none; */
+    background-color: aqua;
+
+}
+.draggable:hover > .drag-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

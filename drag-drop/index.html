@@ -8,20 +8,42 @@
     <link rel="stylesheet" href="./style.css" type="text/css">
 </head>
 <body> 
-    <div class="drop-container">
+    <div class="main-container">
+        <div class="draggable" draggable="true">list 1 down
+            <div class="drag-container">
+
+                <div draggable="true" class="div-child draggable">1</div>
+                <div draggable="true" class="div-child draggable">2</div>
+                <div draggable="true" class="div-child drag">3</div>
+                <div draggable="true" class="div-child draggable">4 down 
+                    <div class="drag-container">
+
+                        <div draggable="true" class="div-child">1</div>
+                        <div draggable="true" class="div-child">2</div>
+                        <div draggable="true" class="div-child">3</div>
+                    </div>
+            </div>
+
+            </div>
+        </div>
+        <div class="draggable" draggable="true">list 2</div>
+        <div class="draggable" draggable="true">list 3</div>
+        <div class="draggable" draggable="true">list 4</div>
+        <div class="draggable" draggable="true">list 5</div>
+    </div>
+    <div class="main-container">
         <div class="draggable" draggable="true">list 1</div>
         <div class="draggable" draggable="true">list 2</div>
         <div class="draggable" draggable="true">list 3</div>
         <div class="draggable" draggable="true">list 4</div>
         <div class="draggable" draggable="true">list 5</div>
     </div>
-    <div class="drop-container">
-        <div class="draggable" draggable="true">list 1</div>
-        <div class="draggable" draggable="true">list 2</div>
-        <div class="draggable" draggable="true">list 3</div>
+    <div class="main-container">
         <div class="draggable" draggable="true">list 4</div>
         <div class="draggable" draggable="true">list 5</div>
     </div>
+    <div class="main-container"></div>
+    <div class="main-container"></div>
     <script src="./main.js">
        
     </script>
