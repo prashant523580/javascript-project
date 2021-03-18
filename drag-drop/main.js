@@ -1,69 +1,62 @@
-let  main_container = document.querySelectorAll(".main-container");
-let drag_container = document.querySelectorAll(".drag-container");
+let main_container = document.querySelectorAll(".main-container");
 let draggable = document.querySelectorAll(".draggable");
-let dragged ;
-draggable.forEach((elem) => {
+let dragged = null;
+
+
+draggable.forEach( (elem) => {
     elem.addEventListener("dragstart", (e) => {
-            console.log("dragstart");
-            dragged = e.target;
-            e.dataTransfer.effectAllowed = "move";
-            e.dataTransfer.setData("text/html", e.target.innerHTML);
-            setTimeout(() => {
+        console.log(e.target);
+        dragged = e.target;
+        // e.dataTransfer.effectAllowed ="move";
+        e.dataTransfer.setData("text/html", e.target.innerHTML);
+        setTimeout( () => {
+            // e.target.style.display = "none";
+        }),50;
+    });
+    elem.addEventListener("dragend", (e) => {
+        console.log("drag end ");
+    });
+})
 
-                e.target.style.display = "none";
-            }, 50);
-            // e.target.style.opacity = ".4";
-        }, false);
-        elem.addEventListener("dragend", (e) => {
-            console.log("dragend");
-            // e.target.style.opacity = "1";
-           
 
-        }, false);
-        // elem.addEventListener("drop", (e)  => {
-        //     e.preventDefault()
-        //     dragged = e.target.innerHTML;
-        //    e.target.innerHTML = e.dataTransfer.getData("text/html");
-        // })
-});
 main_container.forEach((elem) => {
+
     elem.addEventListener("dragover", (e) => {
         e.preventDefault();
-        e.dataTransfer.dropEffect = "move";
-        e.target.style.border = "2px solid green";
-    },false);
-    elem.addEventListener("dragenter", (e) => {
-        e.target.style.border = "2px solid green";
-        console.log("drag enter");
-    }, false)
-    elem.addEventListener("dragleave" , (e) => {
-        e.target.style.border = "none";
-        e.stopPropagation();
-        e.dataTransfer.clearData("text/html");
         // e.dataTransfer.dropEffect = "move";
-    }, false);
-    elem.addEventListener("drop", (e) => {
+        console.log("dragover")
+        console.log(e.target.children.length)
+    })
+    elem.addEventListener("dragleave", (e) => {
+        // e.stopPropagation();
+        console.log(" drag leave");
+    });
+    elem.addEventListener("drop",(e) => {
         e.preventDefault();
-        let  data = e.dataTransfer.getData("text/html");
-        let element = document.createElement("div");
-        dragged.innerHTML = e.target.innerHTML;
-        element.className = "draggable";
-        element.setAttribute("draggable", "true");
-        console.log(data)
-        element.innerHTML = data;
-        console.log(element);
-        // console.log(element);
-        if(data === ""){
-            console.log(" none");
-            e.dataTransfer.effectAllowed = "move";
-            dragged.innerHTML = e.target;
-            data = e.dataTransfer.setData("text/html", e.target.innerHTML);
-            console.log("data : " ,data);
-            
-        }else{
-            
-            e.target.append(element);
-        }
+        // if(e.target.children.length > 0){
+          
+        //     console.log("drop finished");
+            dragged.innerHTML = e.target.innerHTML;
+        //     e.target.innerHTML = e.dataTransfer.getData("text/html");
+        //     console.log(e.target.children.length);
+        // }else{
 
-    }, false);
+            let element = document.createElement("div");
+            element.className = "draggable";
+            element.setAttribute("draggable", "true");
+            element.innerHTML = e.dataTransfer.getData("text/html");
+            
+            // var data = e.dataTransfer.getData("text/html");
+            // console.log(data)
+            // e.target.append(document.getElementById(data));
+            // console.log( e.target.append(document.getElementById(data)));
+         
+            e.target.innerHTML = element.innerHTML;
+            
+            console.log(e.target.innerHTML);
+            console.log(dragged)
+
+        // }
+    })
+   
 })
