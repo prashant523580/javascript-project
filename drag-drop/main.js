@@ -6,9 +6,9 @@ let dragged = null;
 draggable.forEach( (elem) => {
     elem.addEventListener("dragstart", (e) => {
         console.log(e.target);
-        dragged = e.target;
+        // dragged = e.target;
         // e.dataTransfer.effectAllowed ="move";
-        e.dataTransfer.setData("text/html", e.target.innerHTML);
+        e.dataTransfer.setData("text", e.target.id);
         setTimeout( () => {
             // e.target.style.display = "none";
         }),50;
@@ -24,8 +24,8 @@ main_container.forEach((elem) => {
     elem.addEventListener("dragover", (e) => {
         e.preventDefault();
         // e.dataTransfer.dropEffect = "move";
-        console.log("dragover")
-        console.log(e.target.children.length)
+        // console.log("dragover")
+        // console.log(e.target.children.length)
     })
     elem.addEventListener("dragleave", (e) => {
         // e.stopPropagation();
@@ -36,25 +36,23 @@ main_container.forEach((elem) => {
         // if(e.target.children.length > 0){
           
         //     console.log("drop finished");
-            dragged.innerHTML = e.target.innerHTML;
+            // dragged.innerHTML = e.target.innerHTML;
         //     e.target.innerHTML = e.dataTransfer.getData("text/html");
         //     console.log(e.target.children.length);
         // }else{
 
-            let element = document.createElement("div");
-            element.className = "draggable";
-            element.setAttribute("draggable", "true");
-            element.innerHTML = e.dataTransfer.getData("text/html");
+            // let element = document.createElement("div");
+            // element.className = "draggable";
+            // element.setAttribute("draggable", "true");
+            // element.innerHTML = e.dataTransfer.getData("text/html");
             
-            // var data = e.dataTransfer.getData("text/html");
+            var data = e.dataTransfer.getData("text");
+            console.log(data)
             // console.log(data)
-            // e.target.append(document.getElementById(data));
+            e.target.appendChild(document.getElementById(data));
             // console.log( e.target.append(document.getElementById(data)));
          
-            e.target.innerHTML = element.innerHTML;
-            
-            console.log(e.target.innerHTML);
-            console.log(dragged)
+            // e.target.innerHTML = element.innerHTML;
 
         // }
     })
