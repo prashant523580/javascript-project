@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css"  href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>calculator</h1>
+        <form>
+            <div class="row">
+
+                <div class="output"></div>
+            </div>
+            <div class="keys">
+
+                <div class="row">
+                    
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+            </div>
+            <div class="row">
+ 
+                <button>5</button>
+                <button>6</button>
+                <button>7</button>
+                <button>8</button>
+            </div>
+            <div class="row">
+                
+                <button>9</button>
+                <button>10</button>
+                <button data-action="mul">*</button>
+                <button data-action="add">+</button>
+            </div>
+            <div class="row">
+                <button data-action="decimal">.</button>
+                <button data-action="sub">-</button>
+                <button data-action="div">/</button>
+                <button data-action="calculate"> = </button>
+            </div>
+            <button data-action="clear" class="clear"> AC</button>
+            </div>
+        </form>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

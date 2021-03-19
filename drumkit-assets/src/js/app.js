@@ -11,10 +11,14 @@ document.addEventListener("keypress", (evt) => {
     play_sound(evt.key);
     btn_animate(evt.key);
 });
-play_btn.addEventListener("click", (evt) => {
-    play_sound(evt.key);
-    btn_animate(evt.key);
+play_btn.forEach( (elem) => {
+
+    elem.addEventListener("click", (evt) => {
+        play_sound(evt.key);
+        btn_animate(evt.key);
+})
 });
+
 
 function play_sound(key) {
 
