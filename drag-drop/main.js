@@ -2,7 +2,6 @@ let main_container = document.querySelectorAll(".main-container");
 let draggable = document.querySelectorAll(".draggable");
 let dragged = null;
 
-
 draggable.forEach( (elem) => {
     elem.addEventListener("dragstart", (e) => {
         console.log(e.target);
@@ -58,3 +57,54 @@ main_container.forEach((elem) => {
     })
    
 })
+
+
+// function sortFunc(){
+//     Array.from(draggable).forEach((e) => {
+//         let lists = e.childNodes[0].nodeValue;
+//         console.log(lists)
+//           let sorted =   lists.sort((a, b)=>{
+//                 var capA = a.nodeValue.toUpperCase();
+//                 var capB = b.nodeValue.toUpperCase();
+//                 if(capA > capB){
+//                     return 1;
+//                 }
+//                 if(capA < capB){
+//                     return -1;
+//                 }
+//                 return 0
+//             });
+//             console.log(sorted[0].nodeValue);
+//             // console.log(listArray[0].nodeValue)
+//         e.innerHTML = sorted[0].nodeValue;
+//     })
+// }
+
+function sortFunc(){
+    var data_list, i , run, stop;
+    var main_container = document.querySelector(".main-container");
+    
+   run = true;
+    while(run){
+        run = false;
+        data_list = main_container.getElementsByTagName("LI");
+
+        for(i =0; i < (data_list.length - 1); i++){
+            stop = false;
+            let data1 =data_list[i].innerHTML.toLowerCase();
+            let data2 =data_list[i + 1].innerHTML.toLowerCase();
+
+            if(data1 > data2){
+                stop = true;
+                break;
+            }
+        }
+        // if the current item is smaller then the next item then adding it after it using insertBefore() method
+    if(stop){
+        data_list[i].parentNode.insertBefore(
+            data_list[i + 1], data_list[i]
+        );
+        run = true;
+    }
+    }
+}
