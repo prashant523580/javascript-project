@@ -10,13 +10,14 @@ draggable.forEach((elem) => {
         e.dataTransfer.setData("text/html", e.target.innerHTML);
     })
     elem.addEventListener("dragend", (e) => {
-        console.log("drag-end")
+        console.log("drag-end");
     })
 })
 
 dropable.forEach((elem) => {
     elem.addEventListener("dragover", (e) => {
         e.preventDefault();
+        
     })
     elem.addEventListener("dragleave", (e) => {
         // console.log("dragleave", e.target);
@@ -26,25 +27,29 @@ dropable.forEach((elem) => {
         e.preventDefault();
         let data = e.dataTransfer.getData("text");
         if(e.target.childNodes.length > 1){
+            // console.log(e.target.parentNode.childNodes[1].childNodes[1].childNodes[0].nodeValue);
+            
+        //    dragged.setAttribute("data-char", e.target.parentNode.childNodes[1].childNodes[1].childNodes[0].nodeValue);
+        //     e.target.setAttribute("data-char", dragged.parentNode.childNodes[1].childNodes[1].childNodes[0].nodeValue);
             e.target.parentNode.childNodes[5].appendChild(document.getElementById(data));
-        }else{
-            e.dataTransfer.dropEffect ="move";
+            
+        }else if(dragged == true || draggable.length > 1){
+            
+            // e.dataTransfer.dropEffect ="move";
             // e.target.innerHTML = e.target.childNodes[0];
             // console.log(e.target.childNodes[0].nodeValue)
-            if(dragged){
-                console.log(e.target.innerHTML)
-                console.log(dragged)
-
-                dragged.innerHTML = e.target.innerHTML;
-                e.target.innerHTML = e.dataTransfer.getData("text/html");
-                
-            }
+                            dragged.setAttribute("data-char", e.target.childNodes[0].nodeValue);
+                            e.target.setAttribute("data-char", dragged.childNodes[0].nodeValue);
+                            dragged.innerHTML = e.target.innerHTML;
+                            e.target.innerHTML = e.dataTransfer.getData("text/html");
         }
         
     } )
 })
 sortFun = (ul) => {
-    console.log(ul)
+    console.log(ul.childNodes)
+    // Array.from(ul).forEach((ell) => {
+
         var elements = Array.from(ul.children);
         console.log(elements);
         elements.sort((a,b) =>{
@@ -52,11 +57,12 @@ sortFun = (ul) => {
             var list2 = b.getAttribute('data-char').charCodeAt(0);
             let charCA = 'a'.charCodeAt(0);
             //add weight if its a number
-                if(list1 < charCA) list1 += 100;
-                if(list2 < charCA) list2 += 100;
-
-                return list1 -list2;
+            if(list1 > charCA) list1 += 100;
+            if(list2 > charCA) list2 += 100;
+            
+            return list1 - list2;
         } )
+    // })
 
         //append back to update the order
         elements.forEach((element) =>  {
