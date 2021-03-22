@@ -1,5 +1,6 @@
 let addButton = document.getElementById("addBtn");
 let addText = document.getElementById("addText");
+let addTitle = document.getElementById("addTitle");
 let noteCards = document.getElementsByClassName("content-box");
 let searchValue = document.getElementById("search");
 addButton.addEventListener("click" , (e) => {
@@ -11,10 +12,21 @@ addButton.addEventListener("click" , (e) => {
     }else{
         note_obj = JSON.parse(noteText);
     }
-    note_obj.push(addText.value);
-    localStorage.setItem("notes" , JSON.stringify(note_obj));
-    addText.value = "";
-    console.log(noteText)
+    let Obj = {
+        title : addTitle.value,
+        text : addText.value
+    }
+    console.log(addTitle.value)
+    if(addTitle.value !== ''){
+
+        note_obj.push(Obj);
+        localStorage.setItem("notes" , JSON.stringify(note_obj));
+        console.log(noteText)
+    }else{
+        addText.value = "";
+        addTitle.value = "";
+    }
+
 
 
     showTextNote();
@@ -35,8 +47,8 @@ window.addEventListener("load", function(){
         note_obj.forEach((element, index) => {
             html += `
             <div class="content-box" >
-            <h1> Todo ${index + 1} </h1>
-            <p> ${element}</p>
+            <h1> Todo ${element.title} </h1>
+            <p> ${element.text}</p>
             <button id="${index}" onclick="deleteNote(this.id)">delete</button>
             </div>
             `
@@ -56,8 +68,8 @@ window.addEventListener("load", function(){
         }
     }
     function deleteNote(ind){
-        console.log("deleting items");
-        console.log(ind);
+        // console.log("deleting items");
+        // console.log(ind);
         let noteText = localStorage.getItem("notes");
         if(noteText == null){
             note_obj = [];
