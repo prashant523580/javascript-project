@@ -8,8 +8,10 @@ draggable.forEach((elem) => {
         e.dataTransfer.effectAllowed = "move";
         e.dataTransfer.setData("text", e.target.id);
         e.dataTransfer.setData("text/html", e.target.innerHTML);
-    })
+        e.target.style.opacity = ".4";
+    });
     elem.addEventListener("dragend", (e) => {
+        e.target.style.opacity = "1";
         console.log("drag-end");
     })
 })
@@ -19,36 +21,35 @@ dropable.forEach((elem) => {
         e.preventDefault();
     });
     elem.addEventListener("dragleave", (e) => {
+        e.target.style.backgroundColor = "none";
         // console.log("dragleave", e.target);
-        e.dataTransfer.dropEffect = "move";
+        // e.dataTransfer.dropEffect = "move";
+        e.stopPropagation();
     });
     elem.addEventListener("drop", (e)=> {
         e.preventDefault();
         let data = e.dataTransfer.getData("text");
+        
         if(e.target.childNodes.length > 1){
-        e.target.parentNode.children[2].appendChild(document.getElementById(data));
-    }else if(e.target.children.length > 1 || dragged.children.length > 1){
-        // console.log(dragged.children[1].children[0].innerHTML);
-        // console.log(e.target);
+            e.target.parentNode.children[2].appendChild(document.getElementById(data));
+    }else if( e.target.children.length > 1){
+        console.log(dragged.children[1].children[0])
         e.target.setAttribute("data-char", dragged.children[1].children[0].innerText);
-        dragged.setAttribute("data-char", e.target.innerHTML);
+        // dragged.setAttribute("data-char", e.target.innerHTML);
         dragged.innerHTML = e.target.innerHTML;
         e.target.innerHTML = e.dataTransfer.getData("text/html");
 
     }
-    else if(dragged){
-            // console.log(e.target.innerHTML);
-            // console.log(dragged.innerHTML)
-            dragged.setAttribute("data-char", e.target.innerHTML);
-            e.target.setAttribute("data-char", dragged.innerHTML);
+        else{
+            dragged.setAttribute("data-char", e.target.innerText);
+            e.target.setAttribute("data-char", dragged.innerText);
             dragged.innerHTML = e.target.innerHTML;
             e.target.innerHTML = e.dataTransfer.getData("text/html");
         }
-    } )
+    } );
 });
 sortFun = (ul) => {
     console.log(ul.children)
-    // Array.from(ul).forEach((ell) => {
 
         var elements = Array.from(ul.children);
         // console.log(elements);
