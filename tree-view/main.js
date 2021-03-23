@@ -17,41 +17,41 @@ draggable.forEach((elem) => {
 dropable.forEach((elem) => {
     elem.addEventListener("dragover", (e) => {
         e.preventDefault();
-        
-    })
+    });
     elem.addEventListener("dragleave", (e) => {
         // console.log("dragleave", e.target);
         e.dataTransfer.dropEffect = "move";
-    })
+    });
     elem.addEventListener("drop", (e)=> {
         e.preventDefault();
         let data = e.dataTransfer.getData("text");
         if(e.target.childNodes.length > 1){
-            // console.log(e.target.parentNode.childNodes[1].childNodes[1].childNodes[0].nodeValue);
-            
-        //    dragged.setAttribute("data-char", e.target.parentNode.childNodes[1].childNodes[1].childNodes[0].nodeValue);
-        //     e.target.setAttribute("data-char", dragged.parentNode.childNodes[1].childNodes[1].childNodes[0].nodeValue);
-            e.target.parentNode.childNodes[5].appendChild(document.getElementById(data));
-            
-        }else if(dragged == true || draggable.length > 1){
-            
-            // e.dataTransfer.dropEffect ="move";
-            // e.target.innerHTML = e.target.childNodes[0];
-            // console.log(e.target.childNodes[0].nodeValue)
-                            dragged.setAttribute("data-char", e.target.childNodes[0].nodeValue);
-                            e.target.setAttribute("data-char", dragged.childNodes[0].nodeValue);
-                            dragged.innerHTML = e.target.innerHTML;
-                            e.target.innerHTML = e.dataTransfer.getData("text/html");
+        e.target.parentNode.children[2].appendChild(document.getElementById(data));
+    }else if(e.target.children.length > 1 || dragged.children.length > 1){
+        // console.log(dragged.children[1].children[0].innerHTML);
+        // console.log(e.target);
+        e.target.setAttribute("data-char", dragged.children[1].children[0].innerText);
+        dragged.setAttribute("data-char", e.target.innerHTML);
+        dragged.innerHTML = e.target.innerHTML;
+        e.target.innerHTML = e.dataTransfer.getData("text/html");
+
+    }
+    else if(dragged){
+            // console.log(e.target.innerHTML);
+            // console.log(dragged.innerHTML)
+            dragged.setAttribute("data-char", e.target.innerHTML);
+            e.target.setAttribute("data-char", dragged.innerHTML);
+            dragged.innerHTML = e.target.innerHTML;
+            e.target.innerHTML = e.dataTransfer.getData("text/html");
         }
-        
     } )
-})
+});
 sortFun = (ul) => {
-    console.log(ul.childNodes)
+    console.log(ul.children)
     // Array.from(ul).forEach((ell) => {
 
         var elements = Array.from(ul.children);
-        console.log(elements);
+        // console.log(elements);
         elements.sort((a,b) =>{
             var  list1 = a.getAttribute('data-char').charCodeAt(0);
             var list2 = b.getAttribute('data-char').charCodeAt(0);
@@ -59,18 +59,15 @@ sortFun = (ul) => {
             //add weight if its a number
             if(list1 > charCA) list1 += 100;
             if(list2 > charCA) list2 += 100;
-            
             return list1 - list2;
-        } )
-    // })
+        } );
 
         //append back to update the order
         elements.forEach((element) =>  {
-            ul.appendChild(element)
-        })
-      
+            ul.appendChild(element);
+        });
 
-}
+};
 
 // function sortFun(){
 //     var sortFlag, sorted,i,data_list;

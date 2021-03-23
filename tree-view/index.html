@@ -14,12 +14,14 @@
     </head>
     <body>
         <button onclick="sortFun( document.getElementsByTagName('ul')[0])">sort</button>
-        <button onclick="sortFun( document.getElementsByTagName('ul')[1])">sort inner</button>
         <ul id="main-ul" class="dropable">
             
             <li draggable="true" class="nested-menu-inner" id="id1" data-char="2">
                 <label for="list2">
-                    2
+                    <span>
+
+                        2
+                    </span>
                     <span class="icon">
                         <i class="fas fa-chevron-circle-right"></i>
                     </span>
@@ -40,11 +42,11 @@
                         </label>
                         <input type="checkbox" class="toggle" id="inside-list2">
                         <ul class="nested dropable" >
-                            <li draggable="true"  id="id2-3-1">2 : 3 : 1
+                            <li draggable="true"  id="id2-3-1" data-char="2 : 3 : 1">2 : 3 : 1
                             </li>
-                            <li draggable="true" id="id2-3-2">2 : 3 : 2
+                            <li draggable="true" id="id2-3-2" data-char="2 : 3 : 2">2 : 3 : 2
                             </li>
-                            <li draggable="true" class="nested-menu-inner" id="id2-3-3">
+                            <li draggable="true" class="nested-menu-inner" id="id2-3-3" data-char="2 : 3 : 3">
                                 <label for="list2-inner">
                                     
                                     2 : 3 : 3
@@ -55,13 +57,13 @@
                                 
                                 <input type="checkbox" class="toggle" id="list2-inner">
                                 <ul class="nested dropable">
-                                    <li draggable="true" id="id2-3-3-1">2:3:3:1</li>
-                                    <li draggable="true" id="id2-3-3-2">2:3:3:2</li>
-                                    <li draggable="true" id="id2-3-3-3">2:3:3:3</li>
+                                    <li draggable="true" id="id2-3-3-1" data-char="2 : 3 : 3 : 1">2:3:3:1</li>
+                                    <li draggable="true" id="id2-3-3-2" data-char="2 : 3 : 3 : 2">2:3:3:2</li>
+                                    <li draggable="true" id="id2-3-3-3" data-char="2 : 3 : 3 : 3">2:3:3:3</li>
                                 </ul>
                             </li>
                             
-                                <li draggable="true" class="nested-menu-inner" id="id2-3-4">
+                                <li draggable="true" class="nested-menu-inner" id="id2-3-4" data-char="2 : 3 : 4">
                                     <label  for="inside-list3">
                                         
                                         2 : 3 : 4 
@@ -71,9 +73,9 @@
                                     </label>
                                     <input type="checkbox" class="toggle" id="inside-list3">
                                     <ul class="nested dropable" >
-                                        <li draggable="true" id="id2-3-4-1">2 : 3 : 4:  1
+                                        <li draggable="true" id="id2-3-4-1" data-char="2 : 3 : 4 : 1">2 : 3 : 4:  1
                                         </li>
-                                        <li draggable="true" id="id2-3-4-2">2 : 3 : 4 : 2
+                                        <li draggable="true" id="id2-3-4-2" data-char="2 : 3 : 4  : 2">2 : 3 : 4 : 2
                                         </li>
                                     </ul>
                             </li>
@@ -87,9 +89,12 @@
             <li draggable="true" class="nested-menu" id="id3" data-char="3">
                 <input type="checkbox" class="toggle" id="list3">
                 <label for="list3">
-                    3
-                   
+                    <span>
+
+                        3
+                    </span>
                     <span class="icon">
+                        
                         <i class="fas fa-chevron-circle-right"></i>
                     </span>
                 </label>

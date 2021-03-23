@@ -27,7 +27,7 @@ li{
     border-radius: 14px;
     font-size: large;
     transition: .2s ease-in-out;
-    border-bottom: 2px solid black ;
+    border-bottom: 2px solid black;
   
 }
 li:hover{
