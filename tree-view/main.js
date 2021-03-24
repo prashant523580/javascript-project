@@ -28,18 +28,21 @@ dropable.forEach((elem) => {
     });
     elem.addEventListener("drop", (e)=> {
         e.preventDefault();
-        let data = e.dataTransfer.getData("text");
         
-        if(e.target.childNodes.length > 1){
-            e.target.parentNode.children[2].appendChild(document.getElementById(data));
-    }else if( e.target.children.length > 1){
-        console.log(dragged.children[1].children[0])
-        e.target.setAttribute("data-char", dragged.children[1].children[0].innerText);
-        // dragged.setAttribute("data-char", e.target.innerHTML);
-        dragged.innerHTML = e.target.innerHTML;
-        e.target.innerHTML = e.dataTransfer.getData("text/html");
+        let data = e.dataTransfer.getData("text");
 
-    }
+    if(e.target.children.length > 1){
+                e.target.parentNode.children[2].appendChild(document.getElementById(data))
+        }
+    // else if( dragged.childNodes.length > 1){
+    //     console.log(dragged.children[1].children[0]);
+    //     console.log(e.target.children)
+    //     e.target.setAttribute("data-char", dragged.children[1].children[0].innerHTML);
+    //     dragged.setAttribute("data-char", e.target.innerText);
+    //     dragged.innerHTML = e.target.innerHTML;
+    //     e.target.innerHTML = e.dataTransfer.getData("text/html");
+
+    // }
         else{
             dragged.setAttribute("data-char", e.target.innerText);
             e.target.setAttribute("data-char", dragged.innerText);
@@ -69,7 +72,23 @@ sortFun = (ul) => {
         });
 
 };
-
+function sortChild(ul){
+    Array.from(ul).forEach((e) => {
+        var elements = Array.from(e.children);
+        elements.sort((a,b) => {
+            var list1 = a.getAttribute('data-char').charCodeAt(0);
+            var list2 = b.getAttribute('data-char').charCodeAt(0);
+            let charAt = 'a'.charCodeAt(0);
+            if(list1 > charAt) list1 += 100;
+            if(list2> charAt) list2 += 100;
+            return list1 - list2;
+        });
+        elements.forEach((ele) => {
+            e.appendChild(ele);
+        });
+        console.log(elements);
+    });
+}
 // function sortFun(){
 //     var sortFlag, sorted,i,data_list;
 //     let main_container = document.querySelector("#main-ul");
