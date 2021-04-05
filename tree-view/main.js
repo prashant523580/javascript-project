@@ -28,21 +28,15 @@ dropable.forEach((elem) => {
     });
     elem.addEventListener("drop", (e)=> {
         e.preventDefault();
-        
         let data = e.dataTransfer.getData("text");
 
     if(e.target.children.length > 1){
-                e.target.parentNode.children[2].appendChild(document.getElementById(data))
+                e.target.parentNode.children[2].appendChild(document.getElementById(data));
+                if(dragged.children.length > 1){
+                    dragged.innerHTML = e.target.innerHTML;
+                    e.target.innerHTML = e.dataTransfer.getData("text/html");
+                }
         }
-    // else if( dragged.childNodes.length > 1){
-    //     console.log(dragged.children[1].children[0]);
-    //     console.log(e.target.children)
-    //     e.target.setAttribute("data-char", dragged.children[1].children[0].innerHTML);
-    //     dragged.setAttribute("data-char", e.target.innerText);
-    //     dragged.innerHTML = e.target.innerHTML;
-    //     e.target.innerHTML = e.dataTransfer.getData("text/html");
-
-    // }
         else{
             dragged.setAttribute("data-char", e.target.innerText);
             e.target.setAttribute("data-char", dragged.innerText);
@@ -52,7 +46,7 @@ dropable.forEach((elem) => {
     } );
 });
 sortFun = (ul) => {
-    console.log(ul.children)
+    // console.log(ul.children)
 
         var elements = Array.from(ul.children);
         // console.log(elements);
@@ -60,6 +54,7 @@ sortFun = (ul) => {
             var  list1 = a.getAttribute('data-char').charCodeAt(0);
             var list2 = b.getAttribute('data-char').charCodeAt(0);
             let charCA = 'a'.charCodeAt(0);
+            console.log(list1)
             //add weight if its a number
             if(list1 > charCA) list1 += 100;
             if(list2 > charCA) list2 += 100;
@@ -75,18 +70,19 @@ sortFun = (ul) => {
 function sortChild(ul){
     Array.from(ul).forEach((e) => {
         var elements = Array.from(e.children);
+        console.log(elements);
         elements.sort((a,b) => {
-            var list1 = a.getAttribute('data-char').charCodeAt(0);
-            var list2 = b.getAttribute('data-char').charCodeAt(0);
-            let charAt = 'a'.charCodeAt(0);
-            if(list1 > charAt) list1 += 100;
-            if(list2> charAt) list2 += 100;
-            return list1 - list2;
+            // var list1 = a.getAttribute('data-char').charCodeAt(0);
+            // var list2 = b.getAttribute('data-char').charCodeAt(0);
+            // let charAt = 'a'.charCodeAt(0);
+            // if(list1 > charAt) list1 += 100;
+            // if(list2 > charAt) list2 += 100;
+            return a - b;
         });
         elements.forEach((ele) => {
             e.appendChild(ele);
         });
-        console.log(elements);
+        // console.log(elements);
     });
 }
 // function sortFun(){
