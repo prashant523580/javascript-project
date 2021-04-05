@@ -1,0 +1,98 @@
+#clock{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 1);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+#hours , #minutes,#seconds, #meridiem{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: .2rem 1rem;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: whitesmoke;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: .2s ease-in-out;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -ms-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    animation: change 2s linear infinite ;
+    -webkit-animation: change 2s linear infinite alternate ;
+}
+#hours{
+    box-shadow: 0 0px 2px 0 rgba(3, 36, 32, 0.8),    0 0px 3px 0 rgba(68, 146, 159, 0.8),    0 0px 5px 0 rgba(41, 70, 70, 0.8),    0 0px 15px 0 rgba(30, 99, 89, 0.8),    0 0px 10px 0 rgba(74, 213, 223, 0.8),    0 0px 40px 0 rgba(71, 4, 84, 0.8),    0 0px 20px 0 rgba(65, 7, 32, 0.8),    0 0px 4px 0 rgba(255, 255, 255, 0.8);
+   
+    animation-delay: .2s;
+    animation-duration: 4.5s;
+}
+#minutes{
+    background-color: rgb(1, 2, 2);
+    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.8),
+    0 0px 3px 0 rgba(68, 146, 159, 0.8),
+    0 0px 2px 0 rgba(201, 201, 9, 0.8),
+    0 0px 15px 0 rgba(30, 99, 89, 0.8),
+    0 0px 10px 0 rgba(74, 213, 223, 0.8),
+    0 0px 40px 0 rgba(141, 26, 164, 0.8),
+    0 0px 20px 0 rgba(220, 13, 103, 0.8),
+    0 0px 4px 0 rgba(34, 104, 208, 0.8);
+  
+    animation-delay: .2s;
+    animation-duration: 5.5s;
+}
+#seconds{
+ 
+ 
+    animation-delay: .1s;
+    animation-duration: 7s;
+}
+#meridiem{
+    background-color: rgb(2, 1, 1);
+    color: rgb(222, 214, 214);
+    /* box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8),    0 0px 3px 0 rgba(82, 20, 20, 0.8),    0 0px 5px 0 rgba(82, 20, 20, 0.8),    0 0px 15px 0 rgba(82, 20, 20, 0.8),    0 0px 10px 0 rgba(82, 20, 20, 0.8),    0 0px 40px 0 rgba(43, 0, 0, 0.8),    0 0px 20px 0 rgba(227, 46, 46, 0.8),    0 0px 4px 0 rgba(82, 20, 20, 0.8); */
+    animation: change 2s linear infinite ;
+    -webkit-animation: change 2s linear infinite alternate ;
+    animation-delay: .4s;
+    animation-duration: 2s;
+}
+@keyframes change {
+    from{
+        box-shadow: 0 0px 2px 0 rgba(3, 36, 32, 0.8),
+        0 0px 3px 0 rgba(68, 146, 159, 0.8),
+        0 0px 5px 0 rgba(41, 70, 70, 0.8),
+        0 0px 15px 0 rgba(30, 99, 89, 0.8),
+        0 0px 10px 0 rgba(74, 213, 223, 0.8),
+        0 0px 25px 0 rgba(8, 86, 169, 0.8),
+        0 0px 20px 0 rgba(65, 7, 32, 0.8),
+        0 0px 4px 0 rgba(106, 3, 250, 0.8);
+    }to{
+        box-shadow:inset 0 0px 2px 0 rgba(92, 4, 121, 0.8),
+        0 0px 3px 0 rgba(204, 33, 33, 0.8),
+        0 0px 5px 0 rgba(30, 148, 222, 0.8),
+        0 0px 15px 0 rgba(28, 129, 136, 0.8),
+        0 0px 10px 0 rgba(7, 238, 242, 0.8),
+        0 0px 25px 0 rgba(56, 140, 80, 0.8),
+        0 0px 20px 0 rgba(9, 113, 85, 0.8),
+        0 0px 4px 0 rgba(15, 228, 217, 0.8);
+    }
+}
