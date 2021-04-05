@@ -8,9 +8,6 @@ draggable.forEach( (elem) => {
         // dragged = e.target;
         // e.dataTransfer.effectAllowed ="move";
         e.dataTransfer.setData("text", e.target.id);
-        setTimeout( () => {
-            // e.target.style.display = "none";
-        }),50;
     });
     elem.addEventListener("dragend", (e) => {
         console.log("drag end ");
