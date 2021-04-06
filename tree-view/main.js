@@ -32,7 +32,7 @@ dropable.forEach((elem) => {
 
     if(e.target.children.length > 1){
                 e.target.parentNode.children[2].appendChild(document.getElementById(data));
-                if(dragged.children.length > 1){
+                if(dragged.children.children.length > 1){
                     dragged.innerHTML = e.target.innerHTML;
                     e.target.innerHTML = e.dataTransfer.getData("text/html");
                 }
@@ -116,3 +116,15 @@ function sortChild(ul){
 //         }
 //     }
 // }
+let list2Edit = document.getElementsByClassName("list2");
+let id1 = document.getElementById("id");
+window.addEventListener("load", () => {
+    let data = localStorage.getItem("text-data");
+    id1.innerHTML = data;
+    console.log(data);
+})
+id1.addEventListener("blur", (e) => {
+    let data = e.target;
+    console.log(data);
+    localStorage.setItem("text-data", data.innerHTML);
+})
