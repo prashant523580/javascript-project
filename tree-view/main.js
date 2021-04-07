@@ -29,19 +29,22 @@ dropable.forEach((elem) => {
     elem.addEventListener("drop", (e)=> {
         e.preventDefault();
         let data = e.dataTransfer.getData("text");
-
-    if(e.target.children.length > 1){
-                e.target.parentNode.children[2].appendChild(document.getElementById(data));
-                if(dragged.children.children.length > 1){
-                    dragged.innerHTML = e.target.innerHTML;
-                    e.target.innerHTML = e.dataTransfer.getData("text/html");
-                }
-        }
-        else{
-            dragged.setAttribute("data-char", e.target.innerText);
-            e.target.setAttribute("data-char", dragged.innerText);
-            dragged.innerHTML = e.target.innerHTML;
-            e.target.innerHTML = e.dataTransfer.getData("text/html");
+        let dropData = document.getElementById(data);
+        if(e.target.children.length > 1){
+            e.target.parentNode.children[2].appendChild(document.getElementById(data));
+            // if(dragged.children.children.length > 1){
+                //     console.log("true")
+                //     dragged.innerHTML = e.target.innerHTML;
+                //     e.target.innerHTML = e.dataTransfer.getData("text/html");
+                // }
+            }
+            else{
+                
+                e.target.appendChild(dropData);
+            // dragged.setAttribute("data-char", e.target.innerText);
+            // e.target.setAttribute("data-char", dragged.innerText);
+            // dragged.innerHTML = e.target.innerHTML;
+            // e.target.innerHTML = e.dataTransfer.getData("text/html");
         }
     } );
 });
@@ -118,13 +121,18 @@ function sortChild(ul){
 // }
 let list2Edit = document.getElementsByClassName("list2");
 let id1 = document.getElementById("id");
-window.addEventListener("load", () => {
-    let data = localStorage.getItem("text-data");
-    id1.innerHTML = data;
-    console.log(data);
-})
-id1.addEventListener("blur", (e) => {
-    let data = e.target;
-    console.log(data);
-    localStorage.setItem("text-data", data.innerHTML);
-})
+// window.addEventListener("load", () => {
+//     let data = localStorage.getItem("text-data");
+//     if(data !== null){
+//         id1.innerHTML = data;
+//         console.log(data);
+
+//     }else{
+//         localStorage.clear();
+//     }
+// })
+// id1.addEventListener("blur", (e) => {
+//     let data = e.target;
+//     console.log(data);
+//     localStorage.setItem("text-data", data.innerHTML);
+// })
