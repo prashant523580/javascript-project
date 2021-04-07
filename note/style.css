@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: sans-serif;
 }
 .container{
     border: 2px solid rgb(10, 1, 1);
@@ -11,10 +12,24 @@
 }
 .container .search-box{
     border: 2px solid rgb(92, 92, 92);
-    padding: .5rem .5rem;
+    padding: .9rem .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.container .search-box label{
+    font-size: large;
+    color: rgb(9, 59, 59);
+    text-transform: capitalize;
 }
 .container .search-box #search{
-    border: 2px solid rgb(112, 112, 112)
+    border: 2px solid rgb(112, 112, 112);
+    padding: .5rem .5rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 .container .search-box button{
     padding: .3rem .3rem;
@@ -28,14 +43,27 @@
 .container .add-note label{
     margin:  0 auto;
     text-transform: capitalize;
- 
+    width: 100%;
     font-size: 30px;
     text-align: center;
+}
+.container .add-note #addTitle{
+    width: 60%;
+    padding: .6rem .3rem;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
 }
 .container .add-note textarea{
     width: 100%;
     resize: none;
     height: 200px;
+    padding: .5rem .3rem;
+    font-size: large;
+    color: gray;
+    background-color: black;
 }
 .container .add-note button{
     padding: .3rem .3rem;
