@@ -48,6 +48,36 @@ dropable.forEach((elem) => {
         }
     } );
 });
+for(i of draggable){
+    // console.log(i);
+    let count = 0;
+    i.addEventListener("dblclick",(e) => {
+            console.log("true");
+                let check = confirm("do you want create list");
+                console.log(check);
+                if(check == true){
+                    
+                   let newDataName =  prompt("enter list name");
+                   if(newDataName !== ""){
+
+                       let li = document.createElement("li");
+                       console.log(li);
+                       li.innerHTML = newDataName;
+                       li.setAttribute("draggable", "true");
+                       li.setAttribute("data-char", count + 1);
+                    //    console.log(e.target);
+                       if(e.target.children.length > 1){
+                            e.target.parentNode.children[2].appendChild(li);
+                            console.log("true", e.target.parentNode.children[2]);
+                       }else{
+
+                           e.target.appendChild(li);
+                       }
+                   }
+                }
+                count++;
+    });
+}
 sortFun = (ul) => {
     // console.log(ul.children)
 
