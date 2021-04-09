@@ -14,17 +14,17 @@
 
 <body>
     <button onclick="sortFun( document.getElementsByTagName('ul')[0])">sort</button>
-    <button onclick="sortChild(document.getElementsByClassName('nested'))"> sort child </button>
+    <button onclick="sortChild()"> sort child </button>
     <ul id="main-ul" class="dropable">
 
         <li draggable="true" class="nested-menu-inner" id="id1" data-char="2">
+            <input type="checkbox" class="toggle" id="list2">
             <label for="list2">
                 <span class="list2">2</span>
                 <span class="icon">
                     <i class="fas fa-chevron-circle-right"></i>
                 </span>
             </label>
-            <input type="checkbox" class="toggle" id="list2">
             <ul class="nested">
                 <li draggable="true"  id="id2-2" data-char="2-2">
                     2-2</li>
@@ -46,8 +46,6 @@
                         <li draggable="true"  class="nested-menu-inner" id="id2-3-3" data-char="2-3-3">
                                 2-3-3
                         </li>
-
-                        
                     </ul>
                 </li>
                 <li draggable="true" class="nested-menu-inner" id="id2-4" data-char="2-4">
@@ -69,10 +67,10 @@
                 <li draggable="true"   id="id3-2" data-char="3-2" > 3-2</li>
                 <li draggable="true"  id="id3-3"  data-char="3-3" >3-3</li>
                 <li draggable="true"  data-char="3-4"  class="nested-menu-inner" id="id3-4">
-                    3-4
                     <input type="checkbox" class="toggle" id="list3-inner">
                     <label for="list3-inner">
                         <span>
+                            3-4
                         </span>
                         <span class="icon">
                             <i class="fas fa-chevron-circle-right"></i>

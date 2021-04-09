@@ -90,78 +90,87 @@ for (i of draggable) {
             }
     });
     }
-    sortFun = (ul) => {
-        // console.log(ul.children)
+    // sortFun = (ul) => {
+    //     // console.log(ul.children)
 
-        var elements = Array.from(ul.children);
-        // console.log(elements);
-        elements.sort((a, b) => {
-            var list1 = a.getAttribute('data-char').charCodeAt(0);
-            var list2 = b.getAttribute('data-char').charCodeAt(0);
-            let charCA = 'a'.charCodeAt(0);
-            console.log(list1)
-            //add weight if its a number
-            if (list1 > charCA) list1 += 100;
-            if (list2 > charCA) list2 += 100;
-            return list1 - list2;
-        });
+    //     var elements = Array.from(ul.children);
+    //     // console.log(elements);
+    //     elements.sort((a, b) => {
+    //         var list1 = a.getAttribute('data-char').charCodeAt(0);
+    //         var list2 = b.getAttribute('data-char').charCodeAt(0);
+    //         let charCA = 'a'.charCodeAt(0);
+    //         console.log(list1)
+    //         //add weight if its a number
+    //         if (list1 > charCA) list1 += 100;
+    //         if (list2 > charCA) list2 += 100;
+    //         return list1 - list2;
+    //     });
 
-        //append back to update the order
-        elements.forEach((element) => {
-            ul.appendChild(element);
-        });
+    //     //append back to update the order
+    //     elements.forEach((element) => {
+    //         ul.appendChild(element);
+    //     });
 
-    };
+    // };
+    function sortChild(){
+        var ul , i, switching,  li, ul_child, should_switch, inside_list,listed; 
+        ul = document.getElementsByTagName("ul");
+        
+        for(li of ul){
+            switching = true;
+            ul_child =  li.getElementsByTagName("li");
+            // console.log(ul_child);
+            while(switching){
+                switching = false;
+                //loop through all list items
+                for(i = 0 ; i < (ul_child.length -1) ; i++){
+                    should_switch = false;
+                    data_list = ul_child[i].children;
+                    // console.log(data_list);
+                    if(data_list.length > 1){
+                        // console.log(data_list[1].children[0].innerText);
+                        listed = data_list[1].children[0].innerText;
+                    }else{
+                        // console.log(ul_child[i].innerText);
+                        listed = ul_child[i].innerText;
+                    }
+                    console.log(listed);
+                    // new_data_list.trim();
+                    // console.log(new_data_list);
+                    // let new_number_data = new Number(new_data_list);
+                    // console.log(new_number_data);
+                    // console.log(data_list);
+                    // console.log(ul_child[i].innerText);
 
-    function sortChild(ul) {
-        Array.from(ul).forEach((e) => {
-            var elements = Array.from(e.children);
-            console.log(elements);
-            elements.sort((a, b) => {
-                // var list1 = a.getAttribute('data-char').charCodeAt(0);
-                // var list2 = b.getAttribute('data-char').charCodeAt(0);
-                // let charAt = 'a'.charCodeAt(0);
-                // if(list1 > charAt) list1 += 100;
-                // if(list2 > charAt) list2 += 100;
-                return a - b;
-            });
-            elements.forEach((ele) => {
-                e.appendChild(ele);
-            });
-            // console.log(elements);
-        });
-    }
-    // function sortFun(){
-    //     var sortFlag, sorted,i,data_list;
-    //     let main_container = document.querySelector("#main-ul");
-    //     sortFlag = true;
-    //     while(sortFlag){
-    //         sortFlag = false;
-    //         data_list = main_container.getElementsByTagName("LI");
-
-    //         for(i=0; i < data_list.length - 1; i++){
-    //             sorted = false;
-    //             let data1 = data_list[i].innerHTML.toLowerCase();
-    //             let data2 = data_list[i + 1].innerHTML.toLowerCase();
-    //             if(data1 > data2){
-    //                 sorted = true;
+                }
+            }
+        }
+}
+    // function sortChild() {
+    //     var i, switching , ul_child, should_switch, dir, switchcount =0 ;
+    //     switching = true;
+    //     let ul = document.getElementsByTagName("ul");
+    //     console.log(ul);
+        
+    //     for(i of ul){
+    //         while(switching){
+    //             switching = false;
+    //         ul_child = i.getElementsByTagName("li");
+    //         console.log(ul_child);
+    //         for(i = 0; i < (ul_child.length - 1); i++){
+    //             if(ul_child[i].innerHTML.toLowerCase() > ul_child[i + 1].innerHTML.toLowerCase()){
+    //                 should_switch = true;
     //                 break;
     //             }
-    //             if(sorted){
-    //                 data_list[i].parentNode.insertBefore(data_list[i + 1], data_list[i]);
-    //                 sortFlag = true;
-    //             }
-    //             Array.from(data_list).forEach((elem) => {
-    //                 let list_num = elem.childNodes[0];
-    //                 let list_array = [list_num];
-    //                 list_array.sort((a,b) => {
-    //                     return a - b;
-    //                 })
-    //                 console.log(list_array[0].nodeValue)
-    //             })
+    //         }
+    //         if(should_switch){
+    //             ul_child[i].parentNode.insertBefore(ul_child[i + 1], ul_child[i]);
+    //             switching = true;
     //         }
     //     }
+    //     }
     // }
+
     let list2Edit = document.getElementsByClassName("list2");
     let id1 = document.getElementById("id");
     // window.addEventListener("load", () => {
