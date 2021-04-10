@@ -66,7 +66,14 @@ function valid_form() {
 }
 
 
-
+function  togglePassword(){
+    let pass = document.getElementById("password");
+        if(pass.type == "password"){
+            pass.type = "text";
+        }else{
+            pass.type = "password";
+        }
+}
 
 
 // function valid_form() {
