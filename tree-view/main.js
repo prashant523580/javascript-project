@@ -51,140 +51,159 @@ for (i of draggable) {
     // console.log(i);
     let count = 0;
     i.addEventListener("dblclick", (e) => {
-            console.log("true");
-            let check = confirm("do you want create list");
-            console.log(check);
-            if (check == true) {
+        console.log("true");
+        let check = confirm("do you want create list");
+        console.log(check);
+        if (check == true) {
 
-                let newDataName = prompt("enter list name");
-                if (newDataName !== "") {
-                    let ul = document.createElement("ul");
-                    let li = document.createElement("li");
-                    // console.log(li);
-                    li.innerHTML = newDataName;
-                    li.setAttribute("draggable", "true");
-                    li.setAttribute("data-char", count + 1);
-                    //    console.log(e.target);
-                    if (e.target.children.length > 1) {
-                        // console.log("true", e.target.parentNode.children[2]);
-                        e.target.parentNode.children[2].appendChild(li);
+            let newDataName = prompt("enter list name");
+            if (newDataName !== "") {
+                let ul = document.createElement("ul");
+                let li = document.createElement("li");
+                // console.log(li);
+                li.innerHTML = newDataName;
+                li.setAttribute("draggable", "true");
+                li.setAttribute("data-char", count + 1);
+                //    console.log(e.target);
+                if (e.target.children.length > 1) {
+                    // console.log("true", e.target.parentNode.children[2]);
+                    e.target.parentNode.children[2].appendChild(li);
+                } else {
+
+                    if (e.target.children.length == 0) {
+                        // e.target.appendChild(li);
+                        e.target.appendChild(ul);
+                        ul.appendChild(li);
+                        console.log(e.target.children[0]);
+                        console.log("true");
                     } else {
-                        
-                        if(e.target.children.length == 0){
-                            // e.target.appendChild(li);
-                            e.target.appendChild(ul);
-                            ul.appendChild(li);
-                            console.log(e.target.children[0]);
-                            console.log("true");
-                        }else{
-                            e.target.children[0].appendChild(li);
-                            console.log("false")
-                           }
+                        e.target.children[0].appendChild(li);
+                        console.log("false")
                     }
-                }else{
-                    console.log("false")
                 }
-                // console.log(e.target.children);
-                
-                count++;
+            } else {
+                console.log("false")
             }
-    });
-    }
-    // sortFun = (ul) => {
-    //     // console.log(ul.children)
+            // console.log(e.target.children);
 
-    //     var elements = Array.from(ul.children);
-    //     // console.log(elements);
-    //     elements.sort((a, b) => {
-    //         var list1 = a.getAttribute('data-char').charCodeAt(0);
-    //         var list2 = b.getAttribute('data-char').charCodeAt(0);
-    //         let charCA = 'a'.charCodeAt(0);
-    //         console.log(list1)
-    //         //add weight if its a number
-    //         if (list1 > charCA) list1 += 100;
-    //         if (list2 > charCA) list2 += 100;
-    //         return list1 - list2;
-    //     });
-
-    //     //append back to update the order
-    //     elements.forEach((element) => {
-    //         ul.appendChild(element);
-    //     });
-
-    // };
-    function sortChild(){
-        var ul , i, switching,  li, ul_child, should_switch, inside_list,listed; 
-        ul = document.getElementsByTagName("ul");
-        
-        for(li of ul){
-            switching = true;
-            ul_child =  li.getElementsByTagName("li");
-            // console.log(ul_child);
-            while(switching){
-                switching = false;
-                //loop through all list items
-                for(i = 0 ; i < (ul_child.length -1) ; i++){
-                    should_switch = false;
-                    data_list = ul_child[i].children;
-                    // console.log(data_list);
-                    if(data_list.length > 1){
-                        // console.log(data_list[1].children[0].innerText);
-                        listed = data_list[1].children[0].innerText;
-                    }else{
-                        // console.log(ul_child[i].innerText);
-                        listed = ul_child[i].innerText;
-                    }
-                    console.log(listed);
-                    // new_data_list.trim();
-                    // console.log(new_data_list);
-                    // let new_number_data = new Number(new_data_list);
-                    // console.log(new_number_data);
-                    // console.log(data_list);
-                    // console.log(ul_child[i].innerText);
-
-                }
-            }
+            count++;
         }
+    });
 }
-    // function sortChild() {
-    //     var i, switching , ul_child, should_switch, dir, switchcount =0 ;
-    //     switching = true;
-    //     let ul = document.getElementsByTagName("ul");
-    //     console.log(ul);
-        
-    //     for(i of ul){
-    //         while(switching){
-    //             switching = false;
-    //         ul_child = i.getElementsByTagName("li");
-    //         console.log(ul_child);
-    //         for(i = 0; i < (ul_child.length - 1); i++){
-    //             if(ul_child[i].innerHTML.toLowerCase() > ul_child[i + 1].innerHTML.toLowerCase()){
-    //                 should_switch = true;
-    //                 break;
-    //             }
-    //         }
-    //         if(should_switch){
-    //             ul_child[i].parentNode.insertBefore(ul_child[i + 1], ul_child[i]);
-    //             switching = true;
-    //         }
-    //     }
-    //     }
-    // }
+sortFun = (ul) => {
+    // console.log(ul.children)
 
-    let list2Edit = document.getElementsByClassName("list2");
-    let id1 = document.getElementById("id");
-    // window.addEventListener("load", () => {
-    //     let data = localStorage.getItem("text-data");
-    //     if(data !== null){
-    //         id1.innerHTML = data;
-    //         console.log(data);
+    var elements = Array.from(ul.children);
+    // console.log(elements);
+    elements.sort((a, b) => {
+        var list1 = a.getAttribute('data-char').charCodeAt(0);
+        var list2 = b.getAttribute('data-char').charCodeAt(0);
+        let charCA = 'a'.charCodeAt(0);
+        console.log(charCA)
+        //add weight if its a number
+        if (list1 > charCA) list1 += 100;
+        if (list2 > charCA) list2 += 100;
+        return list1 - list2;
+    });
 
-    //     }else{
-    //         localStorage.clear();
-    //     }
-    // })
-    // id1.addEventListener("blur", (e) => {
-    //     let data = e.target;
-    //     console.log(data);
-    //     localStorage.setItem("text-data", data.innerHTML);
-    // })
+    //append back to update the order
+    elements.forEach((element) => {
+        ul.appendChild(element);
+    });
+
+};
+
+// function sortChild(){
+//     var ul , li,list,listed ;
+//     ul = document.getElementsByTagName("ul");
+//     // console.log(ul);
+//     for(li of ul){
+//          list = li.getElementsByTagName("li");
+//          console.log(list)
+//          listed = Array.from(list);
+//             listed.sort((a,b) => {
+//                 var li1 = a.getAttribute("data-char").charCodeAt(0); 
+//                 var li2 = b.getAttribute("data-char").charCodeAt(0); 
+//                 let charCA = "a".charCodeAt(0);
+//                 if(li1 > charCA) li1 += 100;
+//                 if(li2 > charCA) li2 += 100;
+//                 return li1 - li2;
+//             })
+//             listed.forEach((element)=> {
+//                 console.log(li.innerHTML)
+//             }) 
+//             // console.log(Array.from(list));
+           
+//     }
+// }
+
+let list2Edit = document.getElementsByClassName("list2");
+let id1 = document.getElementById("id");
+// window.addEventListener("load", () => {
+//     let data = localStorage.getItem("text-data");
+//     if(data !== null){
+//         id1.innerHTML = data;
+//         console.log(data);
+
+//     }else{
+//         localStorage.clear();
+//     }
+// })
+// id1.addEventListener("blur", (e) => {
+//     let data = e.target;
+//     console.log(data);
+//     localStorage.setItem("text-data", data.innerHTML);
+// })
+
+
+function sortChild() {
+    var ul, i, switching, li, ul_child, should_switch,listed,listed_arr;
+    ul = document.getElementsByTagName("ul");
+
+    for (li of ul) {
+        switching = true;
+        ul_child = li.getElementsByTagName("li");
+        // console.log(ul_child);
+        while (switching) {
+            switching = false;
+            //loop through all list items
+            should_switch = false;
+            for (i = 0; i < (ul_child.length - 1); i++) {
+                // console.log(ul_child[i])
+                data_list = ul_child[i].children;
+                // data_list = ul_child[i];
+                // console.log(data_list);
+                if (data_list.length > 1) {
+                    // console.log(data_list[1].children[0].innerText);
+                    // console.log(ul_child[i].children[1].children[0].textContent);
+                    listed = ul_child[i].children[1].children[0].textContent;
+                    should_switch = true;
+                } else {
+                    should_switch = true;
+                    console.log(ul_child[i].innerText);
+                    listed = ul_child[i].innerText;
+                }
+                listed_arr = new Array(listed);
+                
+              
+                // console.log(listed_arr);
+                let sorted = listed_arr.sort(function(a,b){
+                    return a -b;
+                });
+                console.log(sorted)
+            }
+
+        }
+    //    listed.sort(function (a, b) {
+    //         return a - b;
+    //     });
+
+        // if (should_switch) {
+        //     // console.log(ul_child[i].parentNode.insertBefore(ul_child[i],ul_child[i+1]));
+        //     datas = ul_child[i].parentNode.insertBefore(ul_child[i], ul_child[i + 1]);
+        //     console.log(datas);
+        // }
+        // ul.appendChild(listed)
+    }
+
+}
