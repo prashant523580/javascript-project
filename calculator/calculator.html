@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result{
+            width: 60px;
+            background-color: rgb(145, 135, 135);
+            color: black;
+            padding: 10px 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+            <div id="result"></div>
+            <div class="rows">
+
+                <button value="1" >1</button>
+                <button value="2">2</button>
+                <button value="3">3</button>
+            </div>
+            <div class="rows">
+                <button value="4">4</button>
+                <button value="5">5</button>
+                <button value="6">6</button>
+                
+            </div>
+            <div class="rows">
+                <button value="7">7</button>
+                <button value="8">8</button>
+                <button value="9">9</button>
+
+            </div>
+            <div class="row">
+                    <button value="+">+</button>
+                    <button data-value="=">=</button>
+            </div>
+       
+    </div>
+    <script>
+        var result = document.getElementById("result");
+        var buttons = document.querySelectorAll("button");
+        buttons.forEach((btn) => {
+            btn.addEventListener("click" , (e) => {
+                    console.log(e.target.value)
+                    result.innerText += e.target.value;
+                    if(e.target.dataset.value == "="){
+                        result = eval();
+                    
+                    }
+
+            })
+        })
+    
+    </script>
+</body>
+</html>
