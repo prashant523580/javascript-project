@@ -13,42 +13,126 @@
 </head>
 
 <body>
+  
     <button onclick="sortFun( document.getElementsByTagName('ul')[0])">sort</button>
     <button onclick="sortChild()"> sort child </button>
+
+
     <ul id="main-ul" class="dropable">
-        
-        <li draggable="true" id="id" data-char="1">1</li>
+        <li draggable="true" id="id" data-char="1">Chart Of Accounts</li>
         <li draggable="true" class="nested-menu-inner" id="id1" data-char="2">
             <input type="checkbox" class="toggle" id="list2">
             <label for="list2">
-                <span class="list2">2</span>
+                <span class="list2"> Application of Funds </span>
                 <span class="icon">
                     <i class="fas fa-chevron-circle-right"></i>
                 </span>
             </label>
-            <ul class="nested">
-                <li draggable="true"  id="id2-2" data-char="2-2">22</li>
-                <li draggable="true"   id="id2-1" data-char="2-1">21</li>
-                <li draggable="true" class="nested-menu-inner " id="id2-3" data-char="2-3">
+            <ul class="nested dropable">
+                <li draggable="true"  id="id2-2" data-char="2-2">Current Assets</li>
+                <li draggable="true"   id="id2-3" data-char="2-11">Fixed Assets</li>
+                <li draggable="true"  id="id2-4" data-char="2-111">Investments</li>
+                <li draggable="true"  id="id2-5" data-char="2-1111">Temporary Accounts</li>
+                <li draggable="true" class="nested-menu-inner " id="id2-6" data-char="2-3">
                     <input type="checkbox" class="toggle" id="inside-list2">
                     <label draggable="false" for="inside-list2">
-                        <span> 23</span>
+                        <span>Source Of Funds (Liabilities)</span>
                         <span class="icon">
                             <i class="fas fa-chevron-circle-right"></i>
                         </span>
                     </label>
                     <ul class="nested dropable">
-                        <li draggable="true" id="id2-3-1" data-char="2-3-1">231</li>
-                        <li draggable="true"  id="id2-3-2" data-char="2-3-2">232</li>
-                        <li draggable="true"  class="nested-menu-inner" id="id2-3-3" data-char="2-3-3">233</li>
+                        <li draggable="true" id="id2-3-1" class="nested-menu-inner " data-char="2-3-1">
+                            <input type="checkbox" class="toggle" id="inside-list2in">
+                            <label draggable="false" for="inside-list2in">
+                                <span>Capital Account</span>
+                                <span class="icon">
+                                    <i class="fas fa-chevron-circle-right"></i>
+                                </span>
+                            </label>
+                            <ul class="nested dropable">
+                                <li draggable="true">Reserves and Surplus</li>
+                                <li draggable="true">Shareholders and Funds</li>
+                            </ul>
+                        </li>
+                        <li draggable="true" class="nested-menu-inner " id="id2-3-2" data-char="2-3-2">
+                            <input type="checkbox" class="toggle" id="inside-list2in-in">
+                            <label draggable="false" for="inside-list2in-in">
+                                <span>Current Liabilities</span>
+                                <span class="icon">
+                                    <i class="fas fa-chevron-circle-right"></i>
+                                </span>
+                            </label>
+                            <ul class="nested">
+                                <li draggable="true" class="nested-menu-inner ">
+                                    <input type="checkbox" class="toggle" id="inside-list2in3">
+                                    <label draggable="false" for="inside-list2in3">
+                                        <span>Accounts Payable</span>
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-circle-right"></i>
+                                        </span>
+                                    </label>
+                                    <ul class="dropable nested">
+                                        <li>Creditors</li>
+                                        <li>payroll payable</li>
+                                    </ul>
+                                </li>
+                                <li class="nested-menu-inner">
+                                    <input type="checkbox" class="toggle" id="inside-list2in4">
+                                    <label draggable="false" for="inside-list2in4">
+                                        <span>Duties and Taxes</span>
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-circle-right"></i>
+                                        </span>
+                                    </label>
+                                    <ul class="nested">
+                                        <li>CGST</li>
+                                        <li>GST Charges</li>
+                                        <li>IGST</li>
+                                        <li>SGST</li>
+                                        <li>TDS</li>
+                                        <li>TDS Payable</li>
+                                        <li>VAT 13%</li>
+                                    </ul>
+                                </li>
+                                <li>loans (Liabilities)</li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
-                <li draggable="true" class="nested-menu-inner" id="id2-4" data-char="2-4">24</li>
+                <li draggable="true" class="nested-menu" id="id2-7" data-char="2-4">
+                    <input type="checkbox" class="toggle" id="list3">
+                    <label for="list3">
+                        <span>Equity</span>
+                        <span class="icon">
+                            <i class="fas fa-chevron-circle-right"></i>
+                        </span>
+                    </label>
+                    <ul class="nested">
+                        <li>Capital Stock</li>
+                        <li>Dividends Paid</li>
+                        <li>Opening Balance Equity</li>
+                        <li>Retained Earnings</li>
+                    </ul>
+                </li>
+                <li draggable="true" class="nested-menu-inner" id="id2-41" data-char="2-41">
+                    <input type="checkbox" class="toggle" id="list33">
+                    <label for="list33">
+                        <span>Income</span>
+                        <span class="icon">
+                            <i class="fas fa-chevron-circle-right"></i>
+                        </span>
+                    </label>
+                    <ul class="nested">
+                        <li>Direct Income</li>
+                        <li>Indirect Income</li>
+                    </ul>
+                </li>
             </ul>
         </li>
         <li draggable="true" class="nested-menu" id="id3" data-char="3">
-            <input type="checkbox" class="toggle" id="list3">
-            <label for="list3">
+            <input type="checkbox" class="toggle" id="list31">
+            <label for="list31">
                 <span>3</span>
                 <span class="icon">
                     <i class="fas fa-chevron-circle-right"></i>
@@ -77,10 +161,10 @@
         <li draggable="true" id="id4" data-char="4" >4</li>
     </ul>
 
+    
     <script src="./main.js">
 
-    </script>
-
+</script>
 </body>
 
 </html>

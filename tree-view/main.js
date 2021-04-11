@@ -31,7 +31,8 @@ dropable.forEach((elem) => {
         let data = e.dataTransfer.getData("text");
         let dropData = document.getElementById(data);
         if (e.target.children.length > 1) {
-            e.target.parentNode.children[2].appendChild(document.getElementById(data));
+            e.target.parentElement.children[2].appendChild(dropData);
+            // console.log(e.target.parentElement.children)
             // if(dragged.children.children.length > 1){
             //     console.log("true")
             //     dragged.innerHTML = e.target.innerHTML;
@@ -40,6 +41,8 @@ dropable.forEach((elem) => {
         } else {
 
             e.target.appendChild(dropData);
+            // e.target.parentElement.children[2].appendChild(dropData);
+            // console.log(e.target)
             // dragged.setAttribute("data-char", e.target.innerText);
             // e.target.setAttribute("data-char", dragged.innerText);
             // dragged.innerHTML = e.target.innerHTML;
