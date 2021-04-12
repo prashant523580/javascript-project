@@ -1,17 +1,22 @@
+//declaring variables
 let addButton = document.getElementById("addBtn");
 let addText = document.getElementById("addText");
 let addTitle = document.getElementById("addTitle");
-let noteCards = document.getElementsByClassName("content-box");
+
 let searchValue = document.getElementById("search");
+//add  note on click button
 addButton.addEventListener("click" , (e) => {
-   
-    console.log(addText);
+   e.preventDefault();
+
+    //getting  data from localstorage
     let noteText = localStorage.getItem("notes");
+    //check data 
     if(noteText == null){
         note_obj = [];
     }else{
         note_obj = JSON.parse(noteText);
     }
+    //added note title data 
     let Obj = {
         title : addTitle.value,
         text : addText.value
@@ -22,21 +27,29 @@ addButton.addEventListener("click" , (e) => {
         note_obj.push(Obj);
         localStorage.setItem("notes" , JSON.stringify(note_obj));
         console.log(noteText)
-    }else{
+    }
+    else if(addText.value == '' && addTitle.value == ""){
+        
+        note_obj = [];
+    }
+    else{
         addText.value = "";
         addTitle.value = "";
     }
+    addTitle.value = "";
+    addText.value = "";
 
 
 
     showTextNote();
-})
+});
 
 window.addEventListener("load", function(){
   showTextNote();  
-})
+});
     showTextNote = () => {
         let noteText = localStorage.getItem("notes");
+        console.log(noteText);
         if(noteText == null ){
             note_obj = [];
         }else{
@@ -82,7 +95,7 @@ window.addEventListener("load", function(){
        showTextNote();
 
     }
-
+    let noteCards = document.getElementsByClassName("content-box");
     searchValue.addEventListener("input", () => { 
         let values = searchValue.value;
         // console.log("input fired", 
