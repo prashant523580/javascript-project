@@ -1,9 +1,43 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
 .main-container{
-    
+background-color: rgb(3, 19, 14);
+padding: .3rem .5rem;
 }
 .main-container .custom-add{
-    background-color: aqua;
+    background-color: rgb(5, 92, 92);
     padding: .5rem .5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.main-container .custom-add button{
+    outline: 0;
+    border: 0;
+    padding : 5px 12px;
+    text-transform: capitalize;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.main-container .custom-add label{
+    color: aliceblue;
+}
+.main-container .custom-add  input[type=text]{
+    padding: .3rem .3rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 .tasks{
     display: flex;
@@ -12,11 +46,27 @@
 .tasks .to-do{
     padding: .5rem;
     width: 50%;
-    background-color: red;
+    background-color: rgb(137, 15, 15);
+}
+.tasks .to-do p{
+    cursor: move;
+}
+.tasks .to-do p, .tasks .done p {
+    color: aliceblue;
+    text-align: center;
+    font-size: 1.1rem;
+    text-transform:  capitalize;
+    padding: .5rem .5rem;
+    margin: .5rem;
+    
 }
 .tasks .done{
-    background-color: aquamarine;
+    background-color: rgb(49, 134, 106);
     width: 50%;
     padding: .5rem;
 
+}
+.filter{
+    text-transform: capitalize;
+    color: white;
 }

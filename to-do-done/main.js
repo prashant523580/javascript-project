@@ -13,6 +13,7 @@ addBtn.addEventListener("click", () => {
     elP.appendChild(document.createTextNode(addItem));
     to_do.appendChild(elP);
     addItemsEvent(elP);
+    document.querySelector(".items").value = '';
 })
 
 
@@ -52,3 +53,29 @@ const drop = (e) => {
 done.addEventListener("dragover", dragOver);
 done.addEventListener("dragleave", dragLeave);
 done.addEventListener("drop", drop);
+
+
+
+function SearchText(){
+    var input ,input_value,i;
+    input = document.getElementById("text");
+    input_value = input.value.toUpperCase();
+    let div = document.querySelectorAll(".filter");
+    console.log(div);
+    for(i of div){
+        // console.log(i);
+        let text = i.getElementsByTagName("p");
+           Array.from(text).forEach((p)=> {
+                let text_val = p.innerText || p.textContent;
+                console.log(text_val);
+                let text = text_val.toUpperCase().includes(input_value);
+                    if(text){
+                        p.style.display ="block";
+                    }else{
+                        p.style.display = "none";
+                    }
+           });
+    }
+
+
+}

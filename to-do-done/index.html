@@ -10,18 +10,26 @@
 <body>
 <div class="main-container">
     <div class="custom-add">
+        <div class="left">
+            <label for="">Add Tasks:</label>
             <input type="text" class="items">
             <button class="add-item">add</button>
+        </div>
+        <div class="right">
+
+            <label for="text">Search</label>
+            <input type="text" placeholder="searchText" onkeyup="SearchText()" id="text">
+        </div>
     </div>
     <div class="tasks">
-        <div class="to-do">
+        <div class="to-do filter" >
             <h1>to do works</h1>
             <p class="draggable" draggable="true"> task 1</p>
             <p class="draggable" draggable="true"> task 2</p>
             <p class="draggable" draggable="true"> task 3</p>
             <p class="draggable" draggable="true"> task 4</p>
         </div>
-        <div class="done">
+        <div class="done filter">
             <h1>work done</h1>
         </div>
     </div>
