@@ -3,10 +3,12 @@
     margin: 0;
     padding: 0;
     font-family: cursive;
+   
 }
 .main-container{
-background-color: rgb(3, 19, 14);
-padding: .3rem .5rem;
+
+padding: .3rem .5rem;   
+
 }
 .main-container .custom-add{
     background-color: rgb(5, 92, 92);
@@ -40,33 +42,62 @@ padding: .3rem .5rem;
     -o-border-radius: 10px;
 }
 .tasks{
+    width: 100%;
     display: flex;
-    justify-content: center;
 }
-.tasks .to-do{
+.tasks .column{
+    width: 49.99%;
+    background-color: rgb(71, 114, 101);
+  
+}
+.tasks .column h1{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-transform: capitalize;
+}
+.tasks .column .to-do{
     padding: .5rem;
-    width: 50%;
-    background-color: rgb(137, 15, 15);
+    background-color: rgb(105, 37, 37);
+    height: 100vh;
+    overflow:scroll ;
 }
-.tasks .to-do p{
+.tasks .column .to-do p{
     cursor: move;
 }
-.tasks .to-do p, .tasks .done p {
-    color: aliceblue;
+.tasks .column .to-do p, .tasks .column .done p {
+    color: rgb(255, 255, 255);
     text-align: center;
     font-size: 1.1rem;
     text-transform:  capitalize;
     padding: .5rem .5rem;
     margin: .5rem;
-    
 }
-.tasks .done{
+.tasks .column .done{
     background-color: rgb(49, 134, 106);
-    width: 50%;
     padding: .5rem;
-
+    height: 100vh;
 }
 .filter{
     text-transform: capitalize;
     color: white;
+    overflow: scroll;
+    height: 100vh;
+} 
+
+.column-in{
+    width: 100%;
+    padding: 10px 20px;
+    background-color: rgb(11, 11, 108);
+    margin: 4px auto;
+    cursor: move;
+}
+.column-in button{
+    padding: .5rem .6rem;
+    border: none;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    cursor: pointer;
 }
