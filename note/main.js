@@ -16,12 +16,12 @@ addButton.addEventListener("click" , (e) => {
     }else{
         note_obj = JSON.parse(noteText);
     }
-    //added note title data 
+    //added note title data
     let Obj = {
         title : addTitle.value,
         text : addText.value
     }
-    console.log(addTitle.value)
+    console.log(addTitle.value);
     if(addTitle.value !== ''){
 
         note_obj.push(Obj);
