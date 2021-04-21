@@ -57,7 +57,7 @@ padding: .3rem .5rem;
 }
 .tasks .column .to-do{
     padding: .5rem;
-    background-color: rgb(105, 37, 37);
+    background-color: rgba(105, 37, 37, 0.282);
     height: 100vh;
     overflow:scroll ;
 }
@@ -73,9 +73,12 @@ padding: .3rem .5rem;
     margin: .5rem;
 }
 .tasks .column .done{
-    background-color: rgb(49, 134, 106);
+    background-color: rgba(49, 134, 106, 0.371);
     padding: .5rem;
     height: 100vh;
+}
+.done .column-in{
+    background-color: green;
 }
 .filter{
     text-transform: capitalize;
@@ -87,7 +90,7 @@ padding: .3rem .5rem;
 .column-in{
     width: 100%;
     padding: 10px 20px;
-    background-color: rgb(11, 11, 108);
+    background-color: rgba(26, 119, 122, 0.576);
     margin: 4px auto;
     cursor: move;
 }
@@ -100,4 +103,28 @@ padding: .3rem .5rem;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     cursor: pointer;
+}
+.alert-message{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.alert-message .alert-success{
+    transition: .2s ease;
+    -webkit-transition: .2s ease;
+    -moz-transition: .2s ease;
+    -ms-transition: .2s ease;
+    -o-transition: .2s ease;
+    background-color: green;
+    color: white;
+}
+.alert-message .alert-warning{
+    background-color: red;
+    color: white;
+    transition: .2s ease;
+    -webkit-transition: .2s ease;
+    -moz-transition: .2s ease;
+    -ms-transition: .2s ease;
+    -o-transition: .2s ease;
 }
