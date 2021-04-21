@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+
+<body>
+    <div class="main-container">
+        <nav>
+            <div class="right">
+                <div class="icon">icon</div>
+            </div>
+            <div class="right">
+                <form action="">
+                    <label for="searchBy">Search Type</label>
+                    <select id="search-type" class="input-control">
+                        <option disabled selected > --Select Type--</option>
+                        <option value="title">Book Name</option>
+                        <option value="author">Author</option>
+                        <option value="books-type">Books Type</option>
+                        <option value="price">Price</option>
+                    </select>
+                    <input type="search" placeholder="search" id="search" class="input-control">
+
+                </form>
+            </div>
+            
+        </nav>
+    </div>
+    <div class="container">
+        <div id="alert-message"></div>
+        <h1>book store</h1>
+        <form  id="form">
+            <div class="column">
+                <label for="name"> Book Name</label>
+                <input type="text" class="input-control" id="bookName">
+
+            </div>
+            <div class="column">
+                <label for="Author">Author</label>
+                <input type="text" class="input-control" id="Author">
+
+            </div>
+            <div class="column">
+
+                <label for="selectRadioValue">Select Type</label>
+                <select name="" id="type">
+                    <option value="programming">IT Computer Programming</option>
+                    <option value="fiction">fiction</option>
+                    <option value="cooking">cooking</option>
+                </select>
+                <!-- <div class="column">
+                                    <input type="radio" class="radio-control" name="select">first value 
+                                    <input type="radio" name="select">second value
+                                    <input type="radio" name="select">third value
+
+                </div> -->
+            </div>
+            <div class="column">
+                <label for="price">Price</label>
+                <input type="text" id="price" class="input-control">
+            </div>
+            <div class="column">
+                <label for="estd">Established</label>
+                <input type="date" id="estd" class="input-control cal">
+            </div>
+            <button id="addBook">Add book</button>
+        </form>
+        <div id="table">
+            <h1>books</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col" > Books name</th>
+                        <th scope="col" > Author</th>
+                        <th scope="col" > Handle</th>
+                        <th scope="col" >price</th>
+                        <th scope="col" >Established</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- <script src="main.js"></script> -->
+    <script src="./class.js"></script>
+</body>
+
+</html>
