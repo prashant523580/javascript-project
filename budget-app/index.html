@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+<body>
+    <div class="budget-container">
+        <div id="budget-feedback"> </div>
+        <form id="budget-form">
+            <label for="budget">Enter Your Budget</label>
+            <input type="text" class="form-input" id="budget">
+            <button type="submit" id="calculate">Calculate</button>
+        </form>
+        <div class="results">
+            <div class="column">
+                <h1>budget</h1>
+                <p>Rs
+                    <span id="budget-output">0</span>
+                </p>
+            </div>
+            <div class="column">
+                <h1>expenses</h1>
+                <p>Rs <span id="expenses-output">0</span></p>
+            </div>
+            <div class="column">
+                <h1>Balance</h1>
+                <p>Rs <span id="balance-output">0</span></p>
+            </div>
+        </div>
+        <form id="expenses-form">
+            <div class="form-column">
+                <label for="expenses">Enter your Expenses</label>
+                <input type="text" id="expenses" class="form-input">
+            </div>
+            <div class="form-column">
+                <label for="ExpensesAmt">Enter your Expenses Amount</label>
+                <input type="text" id="expensesAmt" class="form-input">
+            </div>
+            <button type="submit" id="addExpenses">Add expenses</button>
+        </form>
+        <table>
+            <thead>
+                <th>S.N</th>
+                <th>expenses</th>
+                <th>Amount</th>
+                <th colspan="2">custom</th>
+            </thead>
+            <tbody id="expenses-lists">
+
+            </tbody>
+        </table>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
