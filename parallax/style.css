@@ -213,3 +213,10 @@ nav .nav-links .nav-link{
     -ms-transform: translate(50px, 10px);
     -o-transform: translate(50px, 10px);
 }
+.section1 #ballon{
+    left: -20%;
+    top: 20%;
+}
+.section1 #small-ballon{
+    top: -10%;
+}

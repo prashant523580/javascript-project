@@ -13,6 +13,9 @@ let single_bird_3 = document.getElementById("single-bird-3");
 let single_bird_4 = document.getElementById("single-bird-4");
 let single_bird_5 = document.getElementById("single-bird-5");
 let single_bird_6 = document.getElementById("single-bird-6");
+let ballon = document.getElementById("ballon");
+let small_ballon = document.getElementById("small-ballon");
+
 
 window.addEventListener("scroll" , () => {
     let y = window.scrollY;
@@ -34,4 +37,8 @@ window.addEventListener("scroll" , () => {
     single_bird_4.style.left =  50+ y * 0.03 + "%";
     single_bird_5.style.left = 20 + y * -0.05 + "%";
     single_bird_6.style.left =  -30 + y* 0.04 + "%";
+    ballon.style.top = 10 + y * 0.04 + "%";
+    ballon.style.left = -20 + y * 0.05 + "%";
+    small_ballon.style.top = 20 + y * -0.06 + "%";
+    small_ballon.style.left = 30 + y * -0.06 + "%";
 })
