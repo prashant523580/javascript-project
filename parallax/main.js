@@ -16,8 +16,13 @@ let single_bird_6 = document.getElementById("single-bird-6");
 let single_bird_8 = document.getElementById("single-bird-8");
 let ballon = document.getElementById("ballon");
 let small_ballon = document.getElementById("small-ballon");
-let forest_road = document.getElementById("forest-road");
-let section2_parallax = document.getElementById("forest-road2");
+let forest_road = document.getElementById("forest");
+let section2_parallax = document.getElementById("forest2");
+let content1 = document.getElementById("content1");
+let content2 = document.getElementById("content2");
+let content3 = document.getElementById("content3");
+let content4 = document.getElementById("content4");
+let text_content = document.getElementById("text-content");
 
 window.addEventListener("scroll" , () => {
     let y = window.scrollY;
@@ -45,13 +50,31 @@ window.addEventListener("scroll" , () => {
     small_ballon.style.top = 25 + y * -0.04 + "%";
     small_ballon.style.left = 30 + y * -0.02 + "%";
     single_bird_8.style.left = 50+  y * -0.05 + "%";
-    if(y > 200){
-        forest_road.style.transform = `scale(${y * 0.0054})`;
+    if(y > 280){
+        forest_road.style.transform = `scale(${y * 0.0040})`;
         forest_road.style.top = y * -0.5 + "%";
     }
-    if(y > 1000){
-        section2_parallax.style.top= y * -0.5 + "%";
+    if(y > 1150){
+        section2_parallax.style.top = y * -0.05 + "%";
         section2_parallax.style.transform = `scale(${y * 0.001})`;
     }
+    if(y >= 1250){
+        content1.style.marginLeft = "0";
+        content2.style.marginTop = "0";
+        content3.style.marginBottom = "0";
+        content4.style.marginRight = "0";
+        // text_content.style.display = "flex";
+        content1.style.transform = "rotate(360deg)";
+
+    }else{
+        content1.style.marginLeft = "10000px";
+        content2.style.marginTop = "1000px";
+        content3.style.marginBottom = "1000px";
+        content4.style.marginRight = "-1500px";
+        
+        console.log(content4)
+    }
+    
+    console.log(y)
 })
 
