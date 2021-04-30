@@ -22,14 +22,14 @@ let section2_parallax = document.getElementById("forest-road2");
 window.addEventListener("scroll" , () => {
     let y = window.scrollY;
     // console.log(50 + y * 0.05)
-    sky.style.top =   y * 0.08 + "%";
+    // sky.style.top =   y * 0.08 + "%";
     text.style.top =  30 + y * -0.015 +"%";
-    center_mountain.style.top =  -15 + y * 0.32 + "%";
+    center_mountain.style.top =  -15 + y * 0.22 + "%";
     left_mountain.style.left = 10+ y * -0.05 + "%";
     left_mountain.style.top = -3 + y * 0.075 + "%";
     right_mountain.style.top =  y * 0.075 + "%";
     right_mountain.style.right = 10 + y * -0.05 + "%";
-    center_tree.style.top = 40 +  y * 0.04 + "%";
+    center_tree.style.top = 30 +  y * 0.2 + "%";
     // bottom_sky.style.top = 1 + y * -0.1 + "%";
     single_bird_1.style.left =  -20+ y * 0.03 + "%";
     single_bird_2.style.left = 20 + y * -0.05 + "%";
@@ -47,10 +47,11 @@ window.addEventListener("scroll" , () => {
     single_bird_8.style.left = 50+  y * -0.05 + "%";
     if(y > 200){
         forest_road.style.transform = `scale(${y * 0.0054})`;
-        forest_road.style.top = y * -0.05 + "%";
+        forest_road.style.top = y * -0.5 + "%";
     }
-    if(y > 600){
-        section2_parallax.style.transform = `scale(${y * 0.0054})`;
+    if(y > 1000){
+        section2_parallax.style.top= y * -0.5 + "%";
+        section2_parallax.style.transform = `scale(${y * 0.001})`;
     }
 })
 
