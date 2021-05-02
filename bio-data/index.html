@@ -5,39 +5,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 </head>
 <body>
+    <div id="alert-message">
+        
+    </div>
     <form action="">
-        <div class="user-data">
-            <input type="file" id="img-file">
-            <label for="username">username</label>
-            <input type="text" id="username">
-            <label for="email">email</label>
-            <input type="email" id="email">
-            <label for="phonenumber">phone number</label>
-            <input type="tel" id="phonenumber">
-            <label for="dob">Date  of birth</label>
-            <input type="date" id="dob">
-            <label for="citizenship"> citizenship</label>
-            <input type="number" id="citizenship">
-            <label for="fathername"> Name of Father</label>
-            <input type="text" id="fathername">
-            <label for="mothername">name of mother</label>
-            <input type="text" id="mothername">
-            <label for="address">Address</label>
-            <input type="text" id="address">
-        </div>
-        <div class="education">
-            <h1>education qualification:</h1>
+        <div class="header">
 
-            <label for="exam-passed">exam passed</label>
-            <input type="text" id="exam-passed">
-            <label for="board">Name of board</label>
-            <input type="text" id="board">
-            <label for="year">year</label>
-            <input type="number" id="year">
-            <label for="marks">marks</label>
-            <input type="text" id="marks">
+            <h1>bio-data</h1>
+        </div>
+        <div class="user-data">
+            <div class="img-container">
+                <div class="img-content">
+                    
+                    <input type="file" id="img-file">
+                    <div class="selected-img" id="selected-img">
+                    </div>
+                    <div class="image">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                </div>
+                <label for="img-file" class="img-file-btn">upload img</label>
+            </div>
+            <div class="column">
+
+                <label for="username">username</label>
+                <input type="text" id="username" class="input-control">
+            </div>
+            <div class="column">
+
+                <label for="email">email</label>
+                <input type="email" id="email" class="input-control">
+            </div>
+            <div class="column">
+
+                <label for="phonenumber">phone number</label>
+                <input type="tel" id="phonenumber" class="input-control">
+            </div>
+            <div class="column">
+
+                <label for="dob">Date  of birth</label>
+                <input type="date" id="dob" class="input-control">
+            </div>
+            <div class="column">
+
+                <label for="citizenship"> citizenship</label>
+                <input type="number" id="citizenship" class="input-control">
+            </div>
+            <div class="column">
+
+                <label for="fathername"> Name of Father</label>
+                <input type="text" id="fathername" class="input-control">
+            </div>
+            <div class="column">
+
+                <label for="mothername">name of mother</label>
+                <input type="text" id="mothername" class="input-control">
+            </div>
+            <div class="column">
+
+                <label for="address">Address</label>
+                <input type="text" id="address" class="input-control">
+            </div>
+        </div>
+        <div class="education" id="education">
+            <h1>education qualification:</h1>
+            <div class="column">
+                <label for="exam-passed">exam passed</label>
+                <label for="board">Name of board</label>
+                <label for="year">year</label>
+                <label for="marks">marks</label>
+            </div>
+            <div class="column">
+
+                <input type="text" id="exam-passed" class="input-control">
+                <input type="text" id="board" class="input-control">
+                <input type="number" id="year" class="input-control">
+                <input type="text" id="marks" class="input-control">
+            </div>
+            <button id="add-para-btn">add parameter</button>
         </div>
         <div class="extra-qualification">
 
@@ -46,11 +95,13 @@
             <input type="text" id="extra-qualification">
         </div>
         <div class="other">
+            <h1>other</h1>
             <label for="language">Language Known</label>
             <input type="text" id="language">
             <label for="nationality">Nationality</label>
             <input type="text" id="nationality">
             <label for="religion">religion</label>
+            <input type="text" id="religion">
         </div>
         <button id="submit">submit</button>
     </form>

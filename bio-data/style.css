@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1,label{
+    text-transform: capitalize;
+}
+form{
+    background-color: rgb(5, 58, 40);
+    overflow: hidden;
+}
+form .user-data{
+    display: flex;
+    min-width: 500px;
+        flex-direction: column;
+        margin: 0 auto;
+        padding: .5rem .5rem;
+}
+form .user-data .column{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+form .user-data .img-container{
+    /* position: relative; */
+    /* right: 0; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form  .header{
+   
+}
+form .header h1{
+    color:rgb(199, 202, 223) ;
+}
+
+form .user-data .img-container .img-file-btn{
+    background-color: rgb(8, 58, 102);
+    color: white;
+    /*width: 50px;
+    */text-align: center;
+    cursor: pointer;
+    text-transform: capitalize;
+    padding: .3rem .5rem;
+    margin-top: .3rem;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+form .user-data .img-container #img-file{
+opacity: 0;
+position: absolute;
+}
+form .user-data .img-container .img-content{
+    position: relative;
+    /* top: 0; */
+    /* right: -84%; */
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    box-shadow: 0 0 7px 0 rgb(4, 0, 0);
+    border: 1px solid #777;
+    overflow: hidden;
+}
+form .user-data .img-container .selected-img{
+    box-shadow: inset 0 0 6px 0 rgb(7, 7, 7);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    /* border: 2px solid rgba(255, 255, 255, 0.8); */
+}
+form .user-data .img-container .selected-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+form .user-data .img-container .img-content .image{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form .user-data .img-container .img-content .image i{
+    font-size: xx-large;
+    color: white ;
+}
+form .user-data .column label{
+    padding: .3rem .5rem;
+    width: 30%;
+    text-transform: capitalize;
+    color: white;
+}
+form .user-data .column .input-control{
+    outline: 0;
+    border: 0;
+    border-bottom: 2px solid gray;
+    width: 80%;
+    padding: .3rem .5rem;
+    margin: .2rem 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+form .education{
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+form .education h1{
+    text-transform: capitalize;
+    color: white;
+}
+form  .education .column{
+    padding: .3rem .3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: antiquewhite;
+    
+}
+form .education button{
+    outline: 0;
+    border: 0;
+    padding: .3rem .5rem;
+    text-transform: capitalize;
+    background-color: rgba(9, 9, 94, 0.659);
+    color:white;
+    cursor: pointer;
+    
+}
+form .education button:hover{
+    background-color: rgba(6, 6, 68, 0.76);
+    
+}
+form .education .column label{
+    width: 50%;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    border-right :2px ridge rgb(18, 117, 82);
+    border-left :2px groove rgb(51, 191, 160);
+}
+form .education .column .input-control{
+    width: 50%;
+    outline: 0;
+    border: 0;
+    margin: 0 .1rem;
+    padding: .3rem .5rem;
+}
+form .education .column .delete-btn{
+    width: 30px;
+    height: 20px;
+    line-height: 1px;
+    text-align: center;
+    border: 0;
+    background-color: rgb(83, 11, 11);
+    color: aliceblue;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    cursor: pointer;
+}
+#output .user-info{
+    position: relative;
+    width: 100vh;
+    margin: 0 auto;
+    padding: .5rem .5rem;
+}
+#output .user-info .user-image{
+    position: absolute;
+    right: 3.5%;
+    top: 5%;
+    /* border: 3px solid gray; */
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.8);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+#output .user-info .user-image img{
+    width: 100%;
+    height: 100%;
+}
+#output .user-details{
+    background-color: rgb(11, 70, 50);
+    padding: .5rem .5rem;
+}
