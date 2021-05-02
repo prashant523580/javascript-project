@@ -50,27 +50,34 @@ window.addEventListener("scroll" , () => {
     small_ballon.style.top = 25 + y * -0.04 + "%";
     small_ballon.style.left = 30 + y * -0.02 + "%";
     single_bird_8.style.left = 50+  y * -0.05 + "%";
-    if(y > 280){
-        forest_road.style.transform = `scale(${y * 0.0040})`;
-        forest_road.style.top = y * -0.5 + "%";
+    if(y > 450){
+        forest_road.style.transform = `scale(${y * 0.003})`;
+        forest_road.style.top = y * -0.05 + "%";
     }
-    if(y > 1150){
-        section2_parallax.style.top = y * -0.05 + "%";
-        section2_parallax.style.transform = `scale(${y * 0.001})`;
+    if(y > 650){
+        section2_parallax.style.top = y * -0.09 + "%";
+        section2_parallax.style.transform = `scale(${1+ y * 0.0005})`;
     }
-    if(y >= 1250){
+    if(y > 850){
         content1.style.marginLeft = "0";
         content2.style.marginTop = "0";
         content3.style.marginBottom = "0";
         content4.style.marginRight = "0";
-        // text_content.style.display = "flex";
+        text_content.style.display = "flex";
         content1.style.transform = "rotate(360deg)";
-
+        content2.style.transform = "rotate(0deg)";
+        content3.style.transform = "rotate(0deg)";
+        content4.style.transform = "rotate(0deg)";
+        
     }else{
-        content1.style.marginLeft = "10000px";
-        content2.style.marginTop = "1000px";
-        content3.style.marginBottom = "1000px";
-        content4.style.marginRight = "-1500px";
+        content2.style.transform = "rotate(-50deg)";
+        content3.style.transform = "rotate(-50deg)";
+        content1.style.transform = "rotate(-50deg)";
+        content4.style.transform = "rotate(-50deg)";
+        content1.style.marginLeft = "-1000px";
+        content2.style.marginTop = "-1100px";
+        content3.style.marginBottom = "1100px";
+        content4.style.marginRight = "-1000px";
         
         console.log(content4)
     }
