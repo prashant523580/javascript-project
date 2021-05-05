@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cv-form{
+    background-color: rgb(199, 206, 206);
+    padding: .5rem .5rem;
+    overflow: hidden;
+    max-width: 600px;
+    margin: 0 auto;
+}
+h1 ,h2,h3{
+
+    text-transform: capitalize;
+    color: rgb(17, 91, 126);
+}
+h1 ,h2,h3,p{
+    padding: .2rem .3rem;
+    margin: .2rem .3rem;
+    outline: 0;
+    /* border-bottom: 2px solid gray; */
+    width: auto;
+    /* background-color: antiquewhite; */
+}
+
+.cv-form .space-between{
+    display: flex;
+    justify-content: space-between;
+    background-color: aliceblue;
+    border: 1px solid gray;
+}
+.flex{
+    display: flex;
+    /* justify-content: space-evenly; */
+    margin: .3rem 0;
+    background-color: aliceblue;
+    counter-increment: index;
+}
+.flex:hover .add-item{
+    display: block;
+}
+.flex-d-column{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-left: 2px solid gray;
+    padding: .5rem .5rem;
+  
+}
+.add-item{
+    background-color: rgb(30, 110, 124);
+    color: white;
+    padding: .3rem .5rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    display: none;
+}
+/* .flex::before{
+    content: counter(index);
+} */
+ .row{
+    display: flex;
+    flex-direction: column;
+}
+.column-align-center{
+    display: flex;
+    align-items: center;
+}
+
+.column-align-center i {
+    margin: .2rem;
+}
+.img-content{
+    position: relative;
+    border: 2px solid rgb(141, 139, 139);
+    width: 100px;
+    height: 100px;
+    right: 20%;
+    top: 10%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.604);
+
+}
+.img-content label {
+    position: absolute;
+    display: none;
+}
+.img-content label i {
+    color: rgb(16, 80, 136);
+    font-size: 20px;
+    text-align: center;
+    transform: translate(36px,40px);
+    -webkit-transform: translate(36px,40px);
+    -moz-transform: translate(36px,40px);
+    -ms-transform: translate(36px,40px);
+    -o-transform: translate(36px,40px);
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -ms-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+}
+.img-content label i:active{
+    transform: translate(36px,44px);
+    -webkit-transform: translate(36px,44px);
+    -moz-transform: translate(36px,44px);
+    -ms-transform: translate(36px,44px);
+    -o-transform: translate(36px,44px);
+}
+.img-content #img-file{
+    opacity: 0;
+}
+.img-content .img{
+
+    position: absolute;
+    /* top: 50%; */
+    /* left: 50%; */
+    width: 100%;
+    height: 100%;
+    /* background-color:red ; */
+}
+.img-content .img img{
+    width: 100%;
+    height: 100%;
+}
+.img-content:hover > label{
+    display: block;
+}
+
+
+table{
+    /* width: 400px;
+    margin: 0 auto; */
+    border-collapse: collapse;
+    /* background-color: red; */
+}
+table thead th{
+    border: 1px solid black;
+    padding: .5rem .5rem;
+}
+
+table tbody tr{
+    align-items: baseline;
+}
+table tbody tr td{
+    border: 1px solid black;
+    padding: .3rem .3rem;
+    outline: 0;
+    text-transform: capitalize;
+}
+.text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .2rem .0
+}
+ .delete-btn{
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    padding: .1rem .3rem;
+    /*width: 25px;
+    height: 25px;
+    */text-transform: capitalize;
+    color: white;
+    background-color: rgb(136, 43, 43);
+    border-radius:  50%;
+    -webkit-border-radius:  50%;
+    -moz-border-radius:  50%;
+    -ms-border-radius:  50%;
+    -o-border-radius:  50%;
+    
+}
+.text .delete-btn{
+    display: none;
+
+}
+.text:hover button{
+    display: block;
+}
+table tbody tr:hover button{
+    display: block;
+}
+table tbody tr button{
+    display: none;
+    background: none;
+    margin-top: .3rem;
+}

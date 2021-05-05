@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="cv-form">
+        <header class="space-between">
+            
+                <div class="column">
+                    <h1 contenteditable="true">your name </h1>
+                    <h3 contenteditable="true"> developer</h3>
+
+              
+                    <div class="column-align-center">
+                        <i class="fas fa-phone"></i>
+                        <p contenteditable="true">9848584854</p>
+                    </div>
+                    <div class="column-align-center">
+                        <i class="fas fa-at"></i>
+                        <p contenteditable="true">Example@gmail.com</p>
+                    </div>
+                    <div class="column-align-center">
+                        <i class="fas fa-location-arrow"></i>
+                        <p contenteditable="true">location</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="img-content">
+                        <div class="img">
+    
+                            <img src="" alt="" id="img-data">
+                        </div>
+                        <label for="img-file" class="img-file-btn"><i class="fas fa-cloud-upload-alt"></i></label>
+                        <input type="file" id="img-file">
+                    </div>
+                </div>
+        </header>
+        <section>
+            <h1 contenteditable="true"> Experience</h1>
+
+            <div class="flex">
+                <div class="flex-d-column">
+                    <div class="add-item" id="add-experience" onclick="new_element(this.parentElement.parentElement.children[1].id)">
+                        add
+                    </div>
+                </div>
+                <div class="flex-d-column" id="experience">
+                    <p contenteditable="true">Experience 1</p>
+                    <p contenteditable="true">Experience 2</p>
+                    <p contenteditable="true">Experience 3</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="flex-d-column">
+                    <div class="add-item" id="add-experience1" onclick="new_element(this.parentElement.parentElement.children[1].id)">
+                        add
+                    </div>
+                </div>
+                <div class="flex-d-column" id="experience1">
+                    <p contenteditable="true">Experience 1</p>
+                    <p contenteditable="true">Experience 2</p>
+                    <p contenteditable="true">Experience 3</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h1 contenteditable="true">Education</h1>
+            <div class="flex">
+
+                <div class="flex-d-column">
+                    <div class="add-item" id="table-row">
+                        add
+                    </div>
+                </div>
+                <div class="flex-d-column">
+
+                    <table>
+                        <thead>
+                            <th contenteditable="true">Board</th>
+                            <th contenteditable="true">Year</th>
+                            <th contenteditable="true">Marks</th>
+                        </thead>
+                        <tbody id="table-body">
+                            <tr>
+                                <td contenteditable="true">hhss</td>
+                                <td contenteditable="true">2015</td>
+                                <td contenteditable="true">65</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </section>
+    </div>
+</body>
+<script src="./main.js"></script>
+<script>
+    let img_file = document.getElementById("img-file");
+
+    img_file.addEventListener("change", () => {
+        let file_reader = new FileReader();
+        file_reader.onload = function (){
+            let img = document.getElementById("img-data");
+            img.src = file_reader.result;
+        }
+        file_reader.readAsDataURL(img_file.files[0])
+    })
+</script>
+</html>
