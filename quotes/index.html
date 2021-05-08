@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:  Helvetica;
+        }
+        #quotes{
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: rgb(119, 75, 18);
+            padding: .3rem .3rem;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: 200px;
+        }
+        #quotes i {
+           position: absolute;
+           right: 2%;
+          cursor: pointer;
+          color: white;
+        }
+        #quotes i:hover{
+            color: antiquewhite;
+        }
+        .quotes{
+            padding: .4rem .4rem;
+            text-align: center;
+            color: aliceblue;
+        }
+
+         code{
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-transform: uppercase;
+            color: rgb(176, 181, 182);
+        }
+        #quotes .next-btn{
+            position: absolute;
+            bottom: 0;
+            border: 0;
+            padding: .5rem .5rem;
+            text-transform: capitalize;
+            background-color: rgb(155, 144, 129);
+            color: rgb(253, 253, 253);
+            cursor: pointer;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 4px;
+            transition: .1s ease;
+        }
+        #quotes .next-btn:active{
+            transform: translate(-50%,-45%);
+        }
+        #quotes .next-btn:hover{
+            background-color: aliceblue;
+            color: rgb(104, 110, 119);
+        }
+        #alert-message{
+                position: absolute;
+                    color: rgb(12, 52, 82);
+                    z-index: 99;
+                    background-color: rgba(158, 62, 62, 0.59);
+                    width: 100%;
+                    text-align: center;
+                    padding: .2rem .3rem;
+                    display: none;
+                    text-transform: capitalize;
+                   left: 0%;
+        }
+        .tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  /* bottom: 150%; */
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+    </style>
+</head>
+<body onload="getQuotes()">
+    <div id="alert-message"></div>
+    <div id="quotes">
+
+        
+    </div>
+    
+<script>
+    let index = 0;
+        const getQuotes = async () => {
+            const api = "https://type.fit/api/quotes";
+            try{
+                let data = await fetch(api);
+                let fetch_data =await data.json();
+                let display_quotes = document.getElementById("quotes");
+                let html = `
+                <div class="tooltip">
+                    <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                <i onclick="CopyText()"  class="far fa-copy" onmouseout="outFunc()"></i>
+                </div>
+                <div class="quotes"> 
+                    <p id="text"> ${fetch_data[index].text}</p>
+                    
+                    </div>
+                    <code><i>by ${fetch_data[index].author}</i> </code>
+                    <button class="next-btn" onclick="getQuotes()">new quotes</button>
+                    `;
+                    display_quotes.innerHTML = html;
+                    index++;
+                    if(index > fetch_data.length){
+                        index = index % fetch_data.length;
+                        
+                    }
+            }catch(err){
+                console.log("error" , err)
+            }
+
+        }
+        function CopyText(){
+            let text = document.getElementById("text");
+            var range = document.createRange();
+            range.selectNode(text);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            // let alert = document.getElementById("alert-message");
+            // alert.innerHTML = "copied";
+            // alert.style.display = "block"
+            // setTimeout(()=> {
+                // alert.innerHTML = "";
+                // alert.style.display ="none";
+                // },2000);
+                var tooltip = document.getElementById("myTooltip");
+                tooltip.innerHTML = "Copied: " + text.innerText;
+                document.execCommand("copy");
+                window.getSelection().removeAllRanges();
+}
+        
+        function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
+    </script>
+</body>
+</html>
