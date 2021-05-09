@@ -7,80 +7,86 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family:  Helvetica;
-        }
-        #quotes{
-            max-width: 500px;
-            margin: 0 auto;
-            background-color: rgb(119, 75, 18);
-            padding: .3rem .3rem;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            height: 200px;
-        }
-        #quotes i {
-           position: absolute;
-           right: 2%;
-          cursor: pointer;
-          color: white;
-        }
-        #quotes i:hover{
-            color: antiquewhite;
-        }
-        .quotes{
-            padding: .4rem .4rem;
-            text-align: center;
-            color: aliceblue;
-        }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  Helvetica;
+}
 
-         code{
-            position: absolute;
-            width: 100%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            text-transform: uppercase;
-            color: rgb(176, 181, 182);
-        }
-        #quotes .next-btn{
-            position: absolute;
-            bottom: 0;
-            border: 0;
-            padding: .5rem .5rem;
-            text-transform: capitalize;
-            background-color: rgb(155, 144, 129);
-            color: rgb(253, 253, 253);
-            cursor: pointer;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            border-radius: 4px;
-            transition: .1s ease;
-        }
-        #quotes .next-btn:active{
-            transform: translate(-50%,-45%);
-        }
-        #quotes .next-btn:hover{
-            background-color: aliceblue;
-            color: rgb(104, 110, 119);
-        }
-        #alert-message{
-                position: absolute;
-                    color: rgb(12, 52, 82);
-                    z-index: 99;
-                    background-color: rgba(158, 62, 62, 0.59);
-                    width: 100%;
-                    text-align: center;
-                    padding: .2rem .3rem;
-                    display: none;
-                    text-transform: capitalize;
-                   left: 0%;
-        }
-        .tooltip {
+#quotes{
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: rgb(71, 142, 163);
+    padding: .3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 200px;
+    box-shadow: 0 0 4px 0 rgba(38, 38, 38, 0.59);
+    border-radius: 4px;
+    overflow: hidden;
+}
+#quotes div .tooltip  {
+    position: absolute;
+    right: 2%;
+    cursor: pointer;
+    color: white;
+}
+#quotes i.fa-copy:hover{
+    color: antiquewhite;
+}
+.quotes{
+    padding: .4rem .4rem;
+    text-align: center;
+    color: aliceblue;
+}
+
+
+p em{
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-transform: capitalize;
+    color: rgb(220, 220, 220);
+}
+
+/* #quotes .next-btn{
+    position: absolute;
+    bottom: 0;
+    border: 0;
+    padding: .5rem .5rem;
+    text-transform: capitalize;
+    background-color: rgb(155, 144, 129);
+    color: rgb(253, 253, 253);
+    cursor: pointer;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 4px;
+    transition: .1s ease;
+} */
+/* #quotes .next-btn:active{
+    transform: translate(-50%,-45%);
+}
+#quotes .next-btn:hover{
+    background-color: aliceblue;
+    color: rgb(104, 110, 119);
+} */
+#alert-message{
+    position: absolute;
+    color: rgb(12, 52, 82);
+    z-index: 99;
+    background-color: rgba(158, 62, 62, 0.59);
+    width: 100%;
+    text-align: center;
+    padding: .2rem .3rem;
+    display: none;
+    text-transform: capitalize;
+    left: 0%;
+}
+.tooltip {
   position: relative;
   display: inline-block;
 }
@@ -95,9 +101,10 @@
   padding: 5px;
   position: absolute;
   z-index: 1;
-  /* bottom: 150%; */
-  left: 50%;
-  margin-left: -75px;
+  /* bottom: 0%; */
+  top: 100%;
+  /* left: 50%; */
+  margin-left: -115px;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -105,8 +112,8 @@
 .tooltip .tooltiptext::after {
   content: "";
   position: absolute;
-  top: 100%;
-  left: 50%;
+  top: 10px;
+  left: 0%;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
@@ -117,36 +124,131 @@
   visibility: visible;
   opacity: 1;
 }
+.buttons{
+display: flex;
+justify-content: center;
+align-items: center;
+position: absolute;
+bottom: 0;
+border: 0;
+/* background-color: rgb(155, 144, 129); */
+color: rgb(253, 253, 253);
+left: 50%;
+transform: translate(-50%,-50%);
+border-radius: 4px;
+transition: .1s ease;
+z-index: 2;
+}
+.buttons .options{
+    position: relative;
+}
+
+.buttons button{
+    padding: .3rem .3rem;
+    border: 0;
+    margin: auto .3rem;
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: capitalize;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.4);
+}
+.buttons button:hover{
+    background-color: rgb(40, 148, 143);
+    color: white;
+}
+.buttons button:active{
+    box-shadow: inset 0 0 4px 0 rgba(0,0,0,0.4);
+
+}
+.buttons .options .tweet-btns{
+    position: absolute;
+    min-width: 20px;
+    background-color: rgb(242, 240, 240);
+    top: -65px;
+    left: 0;
+    padding: .3rem .3rem;
+   display: none;
+    z-index: 1;
+    transition: .2s ease;
+    border-radius: 10px;
+    text-align: center;
+}
+ .buttons .options .tweet-btns i{
+    cursor: pointer;
+    transform: scale(1);
+    transition: .3s ease-in-out;
+}
+ .buttons .options .tweet-btns i:hover{
+        transform: scale(1.2);
+}
+
+ .buttons .options .tweet-btns i:nth-child(1){
+    cursor: pointer;
+    color: #3b5998;
+}
+ .buttons .options .tweet-btns i:nth-child(2){
+    color: #00acee;
+}
+ .buttons .options .tweet-btns i:nth-child(3){
+    color: #8a3ab9;
+}
+ .options:hover  .tweet-btns{
+  display: block;
+}
+.options:hover .options button{
+    background-color: #00acee;
+}
     </style>
 </head>
 <body onload="getQuotes()">
     <div id="alert-message"></div>
     <div id="quotes">
+        <div id="quote-text">
 
-        
+        </div>
+<div class="buttons" id="buttons">
+            <button class="next-btn" onclick="getQuotes()">next quotes</button>
+            <div class="options">
+                <button class="drop-btn"><i class="fas fa-share-alt"></i> </button>
+                <div class="tweet-btns" id="tweet-btns">
+                    <i class="fab fa-facebook" data-id="facebook"></i>
+                    <i class="fab fa-twitter" data-id="twitter"></i>
+                    <i class="fab fa-instagram-square" data-id="instagram"></i>
+                </div>
+            </div>
+        </div>
     </div>
-    
 <script>
+        function elementString(string){
+
+            let div = document.createElement("div");
+            div.innerHTML = string;
+            return div;
+        }
     let index = 0;
-        const getQuotes = async () => {
+    const getQuotes = async () => {
             const api = "https://type.fit/api/quotes";
             try{
                 let data = await fetch(api);
                 let fetch_data =await data.json();
-                let display_quotes = document.getElementById("quotes");
+                let display_quotes = document.getElementById("quote-text");
                 let html = `
+                
                 <div class="tooltip">
                     <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
                 <i onclick="CopyText()"  class="far fa-copy" onmouseout="outFunc()"></i>
                 </div>
                 <div class="quotes"> 
-                    <p id="text"> ${fetch_data[index].text}</p>
+                    <p id="text"> <q> ${fetch_data[index].text}</q></p>
                     
-                    </div>
-                    <code><i>by ${fetch_data[index].author}</i> </code>
-                    <button class="next-btn" onclick="getQuotes()">new quotes</button>
+                </div>
+                <p><em>by ${fetch_data[index].author}</em> </p>
+             
                     `;
                     display_quotes.innerHTML = html;
+                    // let html_f = elementString(html);
+                    // console.log(html_f);
+                    // display_quotes.insertBefore(html_f, document.getElementById("buttons"));
                     index++;
                     if(index > fetch_data.length){
                         index = index % fetch_data.length;
@@ -180,6 +282,22 @@
   var tooltip = document.getElementById("myTooltip");
   tooltip.innerHTML = "Copy to clipboard";
 }
+    let tweet_btns = document.getElementById("tweet-btns");
+    for (var i of tweet_btns.children){
+        console.log(i.dataset.id)
+        i.addEventListener("click",(e)=>{
+            let target = e.target.dataset.id;
+            let text = document.getElementById("text")
+            if(target == "twitter"){
+                console.log("true")
+                window.open(`https://twitter.com/intent/tweet?text=${text.innerText}`)
+            }else if(target == "facebook"){
+                window.open("https://www.facebook.com/");
+            }else if(target == "instagram"){
+                window.open("https://www.instagram.com/")
+            }
+        })
+    }
     </script>
 </body>
 </html>
