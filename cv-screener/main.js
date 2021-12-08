@@ -1,13 +1,13 @@
 const data = [
     {
-     name : 'Raj Kumar',
+     name : 'Raj Kumar Tharu',
      age : 32,
      city : "nepalganj",
      language: 'c++',
      image : "https://randomuser.me/api/portraits/med/men/40.jpg"
     },
     {
-     name : 'mithun Singh',
+     name : 'mithun Singh Thakuri',
      age : 36,
      city : "kohalpur",
      language: 'Python',
@@ -21,7 +21,7 @@ const data = [
      image : "https://randomuser.me/api/portraits/med/women/40.jpg"
     },
     {
-     name : 'anjali kumari',
+     name : 'anjali shreastha',
      age : 42,
      city : "dhangadi",
      language: 'ruby',

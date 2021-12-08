@@ -199,7 +199,6 @@ function updated() {
             text : data_text,
             id : data_id
         }
-        console.log(obj)
         arr.push(obj);
     })
    localStorage.setItem("done", JSON.stringify(arr));

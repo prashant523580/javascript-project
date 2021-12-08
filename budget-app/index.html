@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="budget-container">
-        <div id="budget-feedback"> </div>
+        <div id="budget-feedback"> <h1> Budget Calculator </h1></div>
         <form id="budget-form">
             <label for="budget">Enter Your Budget</label>
             <input type="text" class="form-input" id="budget">
@@ -17,17 +17,17 @@
         </form>
         <div class="results">
             <div class="column">
-                <h1>budget</h1>
+                <h3>budget</h3>
                 <p>Rs
                     <span id="budget-output">0</span>
                 </p>
             </div>
             <div class="column">
-                <h1>expenses</h1>
+                <h3>expenses</h3>
                 <p>Rs <span id="expenses-output">0</span></p>
             </div>
             <div class="column">
-                <h1>Balance</h1>
+                <h3>Balance</h3>
                 <p>Rs <span id="balance-output">0</span></p>
             </div>
         </div>
@@ -38,7 +38,7 @@
             </div>
             <div class="form-column">
                 <label for="ExpensesAmt">Enter your Expenses Amount</label>
-                <input type="text" id="expensesAmt" class="form-input">
+                <input type="number" id="expensesAmt" class="form-input">
             </div>
             <button type="submit" id="addExpenses">Add expenses</button>
         </form>

@@ -2,6 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
+}
+body{
+	background-color:#7D947A ;
+	font-family: arial,helvetica;
+	color: whites;
 }
 select{
     padding: .4rem .5rem;
@@ -13,7 +19,7 @@ select{
     padding: .3rem .4rem;
 }
 .main-container{
-    background-color: gray;
+    background-color: #2B7A5E;
     box-shadow:   0 0 3px 0 rgba(0,0,0,0.7);
     padding: 1rem .5rem;
 }
@@ -23,17 +29,21 @@ select{
 }
 .container h1{
     text-align: center;
+    color: #13543B;
+    text-transform: capitalize;
+    text-decoration: underline;
 }
 .container form{
-    width: 20rem;
+    min-width: 50rem;
     margin: 0 auto;
    
 }
 .container form .column{
- 
+ 	display: flex;
+ 	align-items: center;
+ 	justify-content: center;
     margin: .5rem .5rem;
-    display: flex;
-    justify-content: space-between;
+  
 }
 /* .container form  .row .column{
     display: flex;
@@ -43,18 +53,31 @@ select{
    
 } */
 .container form .column label{
-   color: rgb(58, 5, 5);
+	width: 14vmin;
+   color: white;
 }
-.container form .column .input-control{
-  
-    padding: .3rem .4rem;
+.container form .column label:before{
+	content: "";
+	width: 40px;
+	height: 40px;
+	transform: rotate(45deg);
+	background-color: #37C0B3;
 }
+.container form .column .input-control,
 .container form .column select{
+	width: 80%;
+    background-color: inherit;
     padding: .4rem .5rem;
     cursor: pointer;
 }
+.container form .column select{
+	background-color: #2B7A5E;
+	color: white;
+}
 .container form .column select option{
     cursor: pointer;
+    color: white;
+    background-color:#2B7A5E;
 }
 .container form button{
     transition: .05s ease-in-out;
@@ -62,6 +85,7 @@ select{
     border: 0;
     padding: .5rem .5rem;
     background-color: rgb(75, 18, 129);
+    background-color: #482AAB;
     color: white;
     text-transform: capitalize;
     border-radius: 4px;
@@ -75,6 +99,12 @@ select{
     -ms-transition: .05s ease-in-out;
     -o-transition: .05s ease-in-out;
     cursor: pointer;
+    float: right;
+}
+.container form:after{
+	display: table;
+	content:"";
+	clear: both;
 }
 .container form button:active{
     box-shadow: none;
@@ -86,25 +116,43 @@ select{
 }
 
 .container #table table {
-    width: 600px;
+   
     margin: 0 auto;
-    border: 2px solid gray;
+    border: 2px solid #044A2F;
     border-collapse: collapse;
 }
 .container #table table thead tr th{
-    border: 2px solid gray;
+    border: 2px solid #044A2F;
     padding: .5rem .5rem;
     text-transform: capitalize;
+    color: #044A2F;
 }
 .container #table table tbody tr td{
-    border: 2px solid gray;
+    border: 2px solid #044A2F;
     padding: .5rem .5rem;
     text-transform: capitalize;
 }
-
-.container #alert-message p.alert-success{
-    color: green;
+.container #table table tbody tr td:nth-child(odd){
+	background-color: #285F39;
 }
+.container #alert-message{
+transition: all 2s ease;
+}
+.container #alert-message p.alert-success,
 .container #alert-message p.alert-error{
-    color: red;
+    	position: absolute;
+	width: 200px;
+	height: 200px;
+	line-height: 200px;
+	text-align: center;
+	border-radius: 5%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color:#880717;
+    color: white;
+}
+.container #alert-message p.alert-success{
+	color: white;
+	background-color:#2B7A5E;
 }

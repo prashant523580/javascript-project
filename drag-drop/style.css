@@ -33,17 +33,22 @@ body{
 .draggable.dragging{
     opacity: .4;
 }
-.drag-container  .div-child{
+.drag-container .div-child{
     width: 80%;
     padding: 10px 12px;
     margin: 2px auto;
     /* display: none; */
     background-color: aqua;
-
+    height: 0px;
+    transition: .3s ease: 
+}
+.drag-container:hover .div-child{
+    height: 200px;
 }
 .draggable:hover > .drag-container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    /*height: 100px;*/
 }

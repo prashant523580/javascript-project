@@ -4,11 +4,12 @@ const displayColor = document.querySelector("#display-color");
 
 btn.addEventListener("click", () => {
     let hexVal = '#';
-    for(let i = 0; i < 8; i++){
+    for(let i = 0; i < 6; i++){
         hexVal += hex[getRandomNumber()];
         document.body.style.backgroundColor =hexVal;
         // document.body.style.color = hexVal;
         displayColor.innerHTML = hexVal;
+        document.body.style.color = 'white';
     }
 });
 function getRandomNumber(){

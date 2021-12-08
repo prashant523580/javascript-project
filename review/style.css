@@ -1,11 +1,38 @@
+
+body{
+
+    box-shadow: inset 0 0 100px 0 rgba(37, 77, 133, 0.79);
+}
 article{
-    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow:  0 0 100px 0 rgba(37, 77, 133, 0.79);
+    padding: .3rem .3rem;
 }
 .image-content{
     width: 200px;
     height: 200px;
+    margin: 0 auto;
 }
 .image-content img{
     width: 100%;
     height: 100%;
+}
+#author,#job,#info{
+	padding: .3rem .3rem;
+	background-color: rgba(37, 77, 133, 0.79);
+	color: white;
+	text-transform: capitalize;
+}
+button{
+	outline: 0;
+	border: 0;
+	padding: .3rem .3rem;
+	background-color: rgba(37, 77, 133, 0.79);
+	margin: .3rem .9rem;
+	text-transform: capitalize;
+	color: white;
+	cursor: pointer;
 }

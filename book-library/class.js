@@ -103,7 +103,10 @@ class DisplayBooks {
         let message_box = IdSelector("alert-message");
 
         message_box.innerHTML = `<p class="${classes}">${message}</p>`;
+        //message_box.style.transform = "scale(1)"
         setTimeout(() => {
+        message_box.style.transitionDuration = ".3s"
+        	    //message_box.style.transform = "scale(0)"
             message_box.innerHTML = '';
         }, 2000);
     }
