@@ -5,15 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container{
+         text-align: center ;
+         background-color: rgb(3, 39, 71);
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%,-50%);
+         padding: 30px;
+            
+        }
+        button{
+            padding: 10px 10px;
+            cursor: pointer;
+            outline: 0;
+            border: 0;
+            color: rgb(3, 0, 0);
+            background-color: rgb(255, 255, 255);
+            font-size: 30px;
+        }
+    </style>
 </head>
 <body>
-    <div id="display-color">
+    <div class="container">
 
+        <button id="btn">button</button>
+        <div id="display-color">
+            
+        </div>
     </div>
-    <button id="btn">button</button>
      <script src="./hex.js"></script>
-    <!--
-    <script src="./color.js"> </script>
-	-->
+    
+    <!-- <script src="./color.js"> </script> -->
+	
 </body>
 </html>
