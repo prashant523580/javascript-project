@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:serif sans-serif;
+}
+:root{
+    --error: rgb(168, 1, 1);
+    --success:rgb(0, 88, 77);
+    --form-bg: rgb(7, 107, 111);
+    --container: rgb(2, 39, 63);
+}
+body{
+    background-color: rgb(150 177 201);
+}
+.form-container {
+    max-width: 600px;
+    /* margin: auto auto; */
+    background: var(--container);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    overflow: hidden;
+    padding: .9rem;
+   position: relative;
+   top: 0%;
+   left: 50%;
+   transform: translate(-50%,10%);
+}
+
+.header-form {
+    background-color: var(--container);
+    padding: 12px 16px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-transform: capitalize;
+}
+
+form {
+    /* background: rgb(7, 107, 105); */
+    background: rgb(255, 255, 255);
+    width: 100%;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border-bottom-right-radius: 40%;
+    /* border-top: 3px solid rgb(0, 163, 228); */
+}
+
+form label {
+    color: var(--container);
+    font-size: 20px;
+    text-transform: capitalize;
+    cursor: pointer;
+    user-select: none;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px 10px;
+    outline: 0;
+    border: 0;
+    border-radius: 2px;
+    transition: all .2s linear;
+    border-bottom: 3px solid var(--container);
+}
+ form::after{
+     content: "";
+     display: table;
+     clear: both;
+ }
+.login-btn {
+    float: right;
+    outline: 0;
+    border: 0;
+    padding: 8px 10px;
+    font-size: 1rem;
+    background-color: rgb(255, 255, 255);
+    color: rgb(5, 104, 107);
+    text-transform: capitalize;
+    cursor: pointer;
+    opacity: 1;
+    transition: all .2s ease;
+    margin-top: 10px;
+    box-shadow: -1px -1px 5px 0 rgba(0,0,0,0.5) ;
+    border-radius: 10px;
+}
+
+.login-btn:hover {
+    opacity: 1;
+    box-shadow: -6px -6px 5px 0 rgba(0,0,0,0.5);
+    transform: translateY(-2px);
+}
+.login-btn:active{
+    box-shadow: 0px 0px 2px 0 rgba(0,0,0,0.5);
+    transform: translateY(2px);
+}
+
+.form-group{
+    position: relative;
+    width: 100%;
+}
+
+.form-group small{
+    position: absolute;
+    right: 6px;
+    top:50%;
+    transform: translateY(10%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: inherit;
+    transition: .2s linear;
+    
+}
+small.success{
+    /* position:; */
+    background-color: var(--success);
+}
+small.error{
+    /* position: relative; */
+    background-color: var(--error);
+}
+small.success::before,
+small.error::before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    /* font-weight: bold ; */
+}
+small.success::before{
+    content:"\2713";
+
+}
+small.error::before{
+    content: "\2716";
+}
+
+.result{
+    padding: 0 10px;
+    background-color: rgb(208, 210, 211);
+    border-radius: .4rem;
+    transition: all .3s linear;
+    overflow: hidden;
+    margin: .3rem 0;
+}
+.check-pattern{
+    color: rgb(10, 2, 2);
+    transition: all .6s ease;
+    margin-top: .4rem;
+}
+.check-pattern::before{
+    content: "\2715";
+    text-align: center;
+    padding: .2rem;
+    margin: .2rem 0 ;
+    background-color: rgb(255, 255, 255);
+    /* border: 1px solid black; */
+    /* border-radius: 50%;
+    width: 25px;
+    height: 25px; */
+}
+.check-pattern.success{
+    color:var(--success);
+}
+.check-pattern.error{
+    color: var(--error);
+}
+.check-pattern.success::before{
+    content: "\2713";
+
+}
+.check-pattern.error::before{
+    content: "\2715";
+}

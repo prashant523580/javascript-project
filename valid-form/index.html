@@ -1,0 +1,72 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body>
+    <!-- <p id="demo" class="elem"></p>
+    <button onclick="click_button(s)"> check </button>
+    <button onclick="click_button_glo()"> check globally </button> -->
+    <div class="form-container">
+        <div class="header-form">
+
+            <h1> form validation </h1>
+        </div>
+        <form name="myforms">
+            <div class="form-group">
+
+                <label for="username"> username </label>
+                <input name="username" type="text" class="form-control" id="username" aria-autocomplete="none">
+                
+                <small id="username-alert"></small>
+            </div>
+            <div class="form-group">
+                
+                <label for="email"> Email </label>
+                <input name="email" type="text" class="form-control" id="email">
+                <small id="email-alert"></small>
+            </div><div class="form-group">
+                
+                <label for="phone"> Phone </label>
+                <input name="phone" type="text" class="form-control" id="phone">
+                <small id="phone-alert"></small>
+            </div>
+            <div class="form-group">
+
+                <label for="password">password</label>
+                <input type="password" class="form-control" id="password">
+                <small id="password-alert"></small>
+  
+            </div>
+            <div class="form-group">
+
+                <input id="toggle" type="checkbox" onclick="togglePassword()">
+                <label for="toggle">show password</label>
+            </div>
+            <input type="submit" value="submit" id="submit" class="login-btn">
+
+        </form>
+        <div class="result">
+
+            <div class="check-pattern" id="check-length">  more then 6 character. </div>
+            <div class="check-pattern" id="text-transform"> at least one uppercase. </div>
+            <div class="check-pattern" id="check-digit"> at least one digit.</div>
+            <div class="check-pattern" id="check-symbol"> at least one special character. </div>
+        </div>
+    </div>
+    <script src="./js/main.js">
+    </script>
+</body>
+
+</html>
