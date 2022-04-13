@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
+    <h1 style="text-align:center;">Task to Do lists</h1>
     <div class="container">
         
         <div class="search-box">
@@ -16,19 +17,19 @@
           
         </div>
         <div class="add-note">
-            <form action="">
+      
 
-                <label for="addTitle"> Add title </label>
-                <input type="text" id="addTitle" required>
+                <!-- <label for="addTitle"> Add title </label> -->
+                <input class="input-control" type="text" id="addTitle" placeholder="title...." required>
                 <br>
-                <label for="addText"> add tasks to do </label>
-                <textarea id="addText" placeholder="write something" required></textarea>
-                <button id="addBtn">add task</button>
-            </form>
+                <!-- <label for="addText"> add tasks to do </label> -->
+                <textarea class="input-control" id="addText" placeholder="write something....." required></textarea>
+                <button id="addBtn">&#43;</button>
+           
         </div>
         <div class="display">
             <div class="header">
-                <h1>works to do</h1>
+                <h1>Lists </h1>
             </div>
 
             <div class="added-note" id="noteBox">

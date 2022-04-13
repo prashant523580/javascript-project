@@ -2,12 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
+    /* color: white; */
 }
 body{
-	background-color:#7D947A ;
+	/* background-color:#7D947A ; */
 	font-family: arial,helvetica;
-	color: whites;
+	/* color: whites; */
 }
 select{
     padding: .4rem .5rem;
@@ -29,7 +29,7 @@ select{
 }
 .container h1{
     text-align: center;
-    color: #13543B;
+    /* color: #13543B; */
     text-transform: capitalize;
     text-decoration: underline;
 }
@@ -54,14 +54,14 @@ select{
 } */
 .container form .column label{
 	width: 14vmin;
-   color: white;
+   /* color: rgba(10, 63, 163, 0.712); */
 }
 .container form .column label:before{
 	content: "";
 	width: 40px;
 	height: 40px;
 	transform: rotate(45deg);
-	background-color: #37C0B3;
+	/* background-color: #03386a; */
 }
 .container form .column .input-control,
 .container form .column select{
@@ -71,35 +71,36 @@ select{
     cursor: pointer;
 }
 .container form .column select{
-	background-color: #2B7A5E;
-	color: white;
+	/* background-color: #064a72; */
+	/* color: rgb(211, 203, 203); */
 }
 .container form .column select option{
     cursor: pointer;
-    color: white;
-    background-color:#2B7A5E;
+    /* color: white; */
+    /* background-color:#065fa8; */
 }
 .container form button{
     transition: .05s ease-in-out;
     outline: 0;
     border: 0;
     padding: .5rem .5rem;
-    background-color: rgb(75, 18, 129);
-    background-color: #482AAB;
-    color: white;
+    /* background-color: rgb(75, 18, 129);
+    background-color: #482AAB; */
+    /* color: white; */
     text-transform: capitalize;
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
-    box-shadow: 0 4px 0 0 rgba(25, 2, 31);
+    /* box-shadow: 0 4px 0 0 rgba(25, 2, 31); */
     -webkit-transition: .05s ease-in-out;
     -moz-transition: .05s ease-in-out;
     -ms-transition: .05s ease-in-out;
     -o-transition: .05s ease-in-out;
     cursor: pointer;
     float: right;
+    margin-right: .3rem;
 }
 .container form:after{
 	display: table;
@@ -118,22 +119,22 @@ select{
 .container #table table {
    
     margin: 0 auto;
-    border: 2px solid #044A2F;
+    /* border: 2px solid #044A2F; */
     border-collapse: collapse;
 }
 .container #table table thead tr th{
-    border: 2px solid #044A2F;
+    border: 2px solid #060707;
     padding: .5rem .5rem;
     text-transform: capitalize;
-    color: #044A2F;
+    /* color: #044A2F; */
 }
 .container #table table tbody tr td{
-    border: 2px solid #044A2F;
+    border: 2px solid #727272;
     padding: .5rem .5rem;
     text-transform: capitalize;
 }
 .container #table table tbody tr td:nth-child(odd){
-	background-color: #285F39;
+	/* background-color: #285F39; */
 }
 .container #alert-message{
 transition: all 2s ease;

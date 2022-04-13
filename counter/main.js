@@ -43,6 +43,7 @@ btn.forEach( (btn) => {
             displayNumber.style.color  = "blue";
             displayNumber.style.fontSize = "20px";
         }
-        displayNumber.innerHTML = count;
+
+        displayNumber.innerHTML +=`<div> ${count} </div>`;
     });
 });

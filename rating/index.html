@@ -1,50 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(230, 227, 223);
+        }
+        .counter-container{
+            width: 700px;
+            margin: auto;
+            /* height: 100%; */
+            display: flex;
+            /* flex-direction: column  ; */
+            /* align-items: center; */
+            /* justify-content: center; */
+        }
+        .counter-container .content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            margin:.6rem auto;
+            text-align: center;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 0 gray;
+            background-color: rgb(10, 6, 1);
+        }
+        .counter-container .content .icon{
+            font-size: 55px;
+            color: rgb(133, 1, 1);
+            /* color: rgb(126, 4, 187); */
+            font-weight: 400;
+            text-align: center;
+        }
+        .counter{
+            color: gray;
+            font-weight: bold;
+            font-size: 25px;
+            color: rgb(221, 154, 10);
+        }
+    </style>
 </head>
+
 <body>
     <div class="counter-container">
-        <div class="counter" data-target="4000">
+        <div class="content">
+            <div class="icon">&#x2766;</div>
+            <div class="counter" data-target="40000"></div>
+        </div>
+        <div class="content">
+            <div class="icon">&#x2230;</div>
+            <div class="counter" data-target="99990"></div>
 
         </div>
-    </div>
-    <div class="counter-container">
-        <div class="counter" data-target="14000">
-
-        </div>
-    </div>
-    <div class="counter-container">
-        <div class="counter" data-target="42000">
-
+        <div class="content">
+            <div class="icon">&#x2298;</div>
+            <div class="counter" data-target="11233"></div>
         </div>
     </div>
     <script>
         const counter = document.querySelectorAll('.counter');
-        counter.forEach((count) =>{
+        counter.forEach((count) => {
             console.log(count.DOCUMENT_NODE);
             count.innerHTML = 0;
-            function updateCounter(){
-            
+
+            function updateCounter() {
+
                 const tar_count = +count.getAttribute('data-target');
                 //console.log(tar_count + " c");
 
                 const starting_count = +count.innerHTML;
                 console.log(starting_count);
-               const incr_count = tar_count / 100;
+                const incr_count = tar_count / 100;
                 console.log(incr_count);
-               if(starting_count < tar_count){
-                   count.innerHTML = `${Math.round(starting_count + incr_count)}`;
-                   setTimeout(updateCounter, 20)
-                }else{
+                if (starting_count < tar_count) {
+                    count.innerHTML = `${Math.round(starting_count + incr_count)}`;
+                    setTimeout(updateCounter, 50)
+                } else {
                     count.innerHTML = tar_count;
-               }
+                }
             }
             updateCounter();
         });
     </script>
 </body>
+
 </html>

@@ -1,10 +1,17 @@
+*{
+    transition: all .3s ease;
+    font-family: sans-serif;
+}
+body{
+    background-color: rgba(211, 211, 211, 0.884);
+}
 .questions{
-    background: rgba(5, 63, 94, 0.933);
-    min-width: 500px;
+    background: rgba(255, 255, 255, 0.933);
+    max-width: 600px;
     margin: 0 auto;
 }
 .title h1{
-    color: cornsilk;
+    color: rgb(0, 0, 0);
     text-align: center;
     text-decoration: underline;
     text-transform: capitalize;
@@ -13,51 +20,50 @@
     
 }
 .questions .section-center .question{
-    color: white;
-    margin: 2px 0;
+    border-bottom: 2px solid gray;
 }
 .questions .section-center .question  .question-title{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background: rgb(10, 91, 106);
+    user-select: none;
+    cursor: pointer;
+    text-transform: capitalize;
 }
 .questions .section-center .question  .question-title button{
     outline: 0;
     border: 0;
     background: transparent;
     font-size: 1.5rem;
-    color: rgb(194, 180, 180);
     cursor: pointer;
+    transform: rotate(90deg);
+}
 
-}
-.questions .section-center .question .question-title button span:nth-child(2) {
-    padding: 0 4px;
-    color: red;
-}
 .questions .section-center .question  .question-title button:hover {
-   color: rgb(255, 255, 255);
+   /* color: rgb(14, 97, 192); */
 }
-/* .questions .section-center .question  .question-title button:hover span:nth-child(2){
-    color: red;
-   
-   
-    background: black;
-} */
+
 .question-text{
-    display: none;
-    transition: .2s ease ;
-    color: cornsilk;
+    height: 0;
+    transition: height .2s ease ;
+    color: rgb(0, 0, 0);
+    overflow: hidden;
+    padding: 0 .6rem;
 }
 .show-text .question-text{
-    display: block;
+    height: 200px;
+    overflow-y: auto;
 }
-.minus-icon{
-    display: none;
+
+.question.show-text .question-title{
+    background-color: rgb(193, 194, 194);
 }
-.show-text .minus-icon{
-    display: inline;
+
+
+.plus-icon{
+
+    transform: rotate(45deg);
 }
 .show-text .plus-icon{
-    display: none;
+   
 }

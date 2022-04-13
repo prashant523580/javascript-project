@@ -134,10 +134,7 @@ nav .nav-links .nav-link {
     text-transform: capitalize;
     background-color: cornflowerblue;
     border-radius: 5px;
-    -webkit-border-radius: ;
-    -moz-border-radius: ;
-    -ms-border-radius: ;
-    -o-border-radius: ;
+ 
     color: white;
     transform: translateY(600%);
     -webkit-transform: translateY(600%);
