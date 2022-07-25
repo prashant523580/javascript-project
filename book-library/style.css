@@ -2,49 +2,97 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* color: white; */
+}
+:root{
+    --light-blue: rgb(48, 135, 170);
+    --dark-blue: rgb(1, 22, 43);
+    --border: 2px solid rgb(13, 85, 179);
 }
 body{
 	/* background-color:#7D947A ; */
 	font-family: arial,helvetica;
 	/* color: whites; */
+    
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
 }
-select{
+.menu{
+    color: white;
+    text-transform: capitalize;
+}
+.search-form form{
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.search-form form select{
     padding: .4rem .5rem;
     cursor: pointer;
+    color: white;
+}.search-form form select option{
+    padding: .4rem .5rem;
+    cursor: pointer;
+    color: var(--light-blue);
+}
+.search-form form .input-control{
+    color: white;
 }
 
-.input-control{
-
-    padding: .3rem .4rem;
-}
-.main-container{
-    background-color: #2B7A5E;
-    box-shadow:   0 0 3px 0 rgba(0,0,0,0.7);
+ nav{
+    
+    background-color: var(--dark-blue);
     padding: 1rem .5rem;
-}
-.main-container nav{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .container h1{
     text-align: center;
     /* color: #13543B; */
     text-transform: capitalize;
     text-decoration: underline;
+    color:var(--light-blue);
 }
 .container form{
-    min-width: 50rem;
+    width: 350px;
     margin: 0 auto;
-   
+    display:grid ;
+    grid-gap: 10px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    justify-content: center;
+    align-items: center;
+    padding: .3em .6em;
 }
 .container form .column{
- 	display: flex;
- 	align-items: center;
- 	justify-content: center;
-    margin: .5rem .5rem;
   
 }
+/* .container form .column:nth-child(1){
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+.container form .column:nth-child(2){
+    grid-column: 2 / span 2;
+    grid-row: 1;
+}
+.container form .column:nth-child(3){
+    grid-column: 1 / span 2;
+    grid-row: 3;
+}
+.container form .column:nth-child(4){
+    grid-column: 2 / span 2;
+    grid-row: 3;
+}
+.container form .column:nth-child(5){
+    grid-column:  span 5;
+    grid-row: 3;
+}
+.container form .column:last-child{
+    grid-column: 1 / span 2;
+    grid-row: 5;
+} */
 /* .container form  .row .column{
     display: flex;
     
@@ -53,8 +101,9 @@ select{
    
 } */
 .container form .column label{
-	width: 14vmin;
-   /* color: rgba(10, 63, 163, 0.712); */
+	/* width: 14vmin; */
+    text-align: left;
+   color: rgba(10, 63, 163, 0.712);
 }
 .container form .column label:before{
 	content: "";
@@ -64,11 +113,20 @@ select{
 	/* background-color: #03386a; */
 }
 .container form .column .input-control,
-.container form .column select{
-	width: 80%;
+.container form .column select,
+.search-form form .input-control
+{
+
     background-color: inherit;
     padding: .4rem .5rem;
-    cursor: pointer;
+    border: 0;
+    border-bottom: 2px solid var(--light-blue);
+}
+.container form .column .input-control:focus,
+.search-form form .input-control:focus
+
+{
+    outline: 0;
 }
 .container form .column select{
 	/* background-color: #064a72; */
@@ -79,14 +137,13 @@ select{
     /* color: white; */
     /* background-color:#065fa8; */
 }
-.container form button{
-    transition: .05s ease-in-out;
+.container form .column button{
+    transition: .2s ease-in-out;
     outline: 0;
     border: 0;
     padding: .5rem .5rem;
-    /* background-color: rgb(75, 18, 129);
-    background-color: #482AAB; */
-    /* color: white; */
+    background-color: white;
+    color: var(--dark-blue);
     text-transform: capitalize;
     border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -99,37 +156,67 @@ select{
     -ms-transition: .05s ease-in-out;
     -o-transition: .05s ease-in-out;
     cursor: pointer;
-    float: right;
+    /* float: right; */
     margin-right: .3rem;
+    
+    box-shadow: 0px 2px 5px var(--dark-blue);
+}
+.container form .column button:hover{
+    
+    background-color: var(--light-blue);
+    color: white;
+    box-shadow: 0px 3px 5px var(--dark-blue);
 }
 .container form:after{
 	display: table;
 	content:"";
 	clear: both;
 }
-.container form button:active{
-    box-shadow: none;
+.container form .column button:active{
+    
+    box-shadow: 0px 0px 1px var(--dark-blue);
     transform: translateY(4px);
     -webkit-transform: translateY(4px);
     -moz-transform: translateY(4px);
     -ms-transform: translateY(4px);
     -o-transform: translateY(4px);
 }
-
+.container #table {
+    /* width: 90%; */
+    height: 40vh;
+    overflow-y: auto;
+    padding: 0 .6em;
+    padding-bottom: .3em;
+}
 .container #table table {
-   
+    position: relative;
+    box-shadow: 0px 0px 3px black;
+    width: 100%;
     margin: 0 auto;
     /* border: 2px solid #044A2F; */
     border-collapse: collapse;
+
+}
+
+.container #table table thead   {
+    position: sticky;
+    border: 2px solid #060707;
+    top: 0;
+    background-color: var(--light-blue);
+    padding: .6em;
+    box-shadow: 0 0 5px black;
 }
 .container #table table thead tr th{
-    border: 2px solid #060707;
     padding: .5rem .5rem;
     text-transform: capitalize;
-    /* color: #044A2F; */
+
+    color: var(--dark-blue);
+}
+.container #table table tbody {
+   
 }
 .container #table table tbody tr td{
-    border: 2px solid #727272;
+    border: var(--border);
     padding: .5rem .5rem;
     text-transform: capitalize;
 }
@@ -141,19 +228,27 @@ transition: all 2s ease;
 }
 .container #alert-message p.alert-success,
 .container #alert-message p.alert-error{
-    	position: absolute;
-	width: 200px;
-	height: 200px;
-	line-height: 200px;
+    position: absolute;
+	width: 400px;
 	text-align: center;
-	border-radius: 5%;
-	top: 50%;
+	border-radius: 4px;
+	top: 15%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	background-color:#880717;
-    color: white;
+	background-color:#ebe4e5;
+    color: rgb(226, 6, 6);
+    padding: 20px 10px;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+    text-transform: capitalize;
 }
 .container #alert-message p.alert-success{
-	color: white;
-	background-color:#2B7A5E;
+	color: rgb(1, 53, 50);
+	background-color:#dde6e3;
+}
+
+footer{
+    padding: 1em 1.3em;
+    margin-top: auto;
+    background: var(--dark-blue);
+    color: whitesmoke;
 }

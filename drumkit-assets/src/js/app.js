@@ -3,7 +3,6 @@ for (var i = 0; i < play_btn.length; i++) {
     play_btn[i].addEventListener("click", () => {
         play_sound(this.innerHTML);
         btn_animate(this.innerHTML);
-        console.log(play_sound(this.innerHTML));
     });
 }
 
@@ -48,7 +47,7 @@ function play_sound(key) {
             hats.play();
             break;
         default:
-            alert("press a s d f j k l to play drum kits");
+            console.log("press a s d f j k l to play drum kits");
             break;
 
     }

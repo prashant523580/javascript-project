@@ -12,18 +12,41 @@ class Books {
 }
 
 class DisplayBooks {
+    constructor(){
+        this.id = 0
+    }
     add(book) {
-        let display_table = IdSelector("tableBody");
-
-        display_table.innerHTML += `
-                                        <tr>
-                                            <td>${book.title}</td>
-                                            <td>${book.author}</td>
-                                            <td>${book.type}</td>
-                                            <td>${book.price}</td>
-                                            <td>${book.estd}</td>
-                                        </tr>
-                                    `;
+        // let display_table = IdSelector("tableBody");
+        // console.log(this.id)
+        // display_table.innerHTML += `
+        //                                 <tr>
+        //                                     <td>${book.title}</td>
+        //                                     <td>${book.author}</td>
+        //                                     <td>${book.type}</td>
+        //                                     <td>${book.price}</td>
+        //                                     <td>${book.estd}</td>
+        //                                     <td> <button onclick='deleteItem(${this.id})'>delete </button> </td>
+        //                                 </tr>
+        //                             `;
+        let books = localStorage.getItem("stored-books");
+        let arr = [];
+        let newObj = {
+            book: book.title,
+            author: book.author,
+            type: book.type,
+            price: book.price,
+            estd: book.estd
+        }
+        if(books !== null ){
+            arr = JSON.parse(books)
+        }else{
+            arr = []
+        }
+        console.log(newObj)
+        arr.push(newObj)
+        console.log(arr)
+        this.localData(arr)
+        localStorage.setItem("stored-books", JSON.stringify(arr));
     }
     validateInput(book) {
         if (book.title.length > 2 || book.author.length > 2 || book.price.length > 2 || book.estd.length === 4) {
@@ -45,21 +68,44 @@ class DisplayBooks {
         message_box.style.transitionDuration = ".3s"
         	    //message_box.style.transform = "scale(0)"
             message_box.innerHTML = '';
-        }, 2000);
+        }, 4000);
+    }
+
+    delete(id){
+        let stored_books = localStorage.getItem("stored-books");
+        let arr = [];
+        if(stored_books !== null){
+         arr = JSON.parse(stored_books)
+        }else{
+            arr = []
+        }
+       let current_books = arr.filter((item,ind) => {
+            if(ind !== id){
+                return item
+            }
+        })
+        console.log(current_books)
+        console.log(arr)
+        this.localData(current_books)
+        localStorage.setItem("stored-books", JSON.stringify(current_books))
     }
     localData(data) {
         let display_table = IdSelector("tableBody");
         let html = "";
-        data.forEach(element => {
+        console.log(data)
+        data.forEach((element,ind )=> {
             html += `
                         <tr>
-                        <td>${element.title}</td>
+                        <td>${element.book}</td>
                         <td>${element.author}</td>
                         <td>${element.type}</td>
                         <td>${element.price}</td>
                         <td>${element.estd}</td>
+                        <td> <button onclick='deleteItem(${ind})'>delete </button> </td>
                         </tr>
                 `;
+            //  html = this.add(element);
+            //  this.id++;
         });
         display_table.innerHTML = html;
     }
@@ -83,33 +129,49 @@ form_btn.addEventListener("click", (e) => {
         console.log("false");
         displayBook.alert_message('alert-error', 'check input fields');
     }
-    addData();
+    showData();
 });
-function addData(){
+function showData(){
+    // let arr = [];
+    // let table_details, bookName, author, type, price, estd;
+    // table_details = IdSelector("tableBody");
+    // console.log(table_details);
+    // let table_rows = table_details.children;
+    // Array.from(table_rows).forEach((row) => {
+    //     bookName = row.children[0].textContent;
+    //     author =row.children[1].textContent;
+    //     type = row.children[2].textContent;
+    //     price = row.children[3].textContent;
+    //     estd = row.children[4].textContent;
+    //     let obj = {
+    //         title : bookName,
+    //         author : author,
+    //         type : type,
+    //         price: price,
+    //         estd : estd
+    //     }
+    //     arr.push(obj);
+    // })
+  
+    let stored_books = localStorage.getItem("stored-books");
     let arr = [];
-    let table_details, bookName, author, type, price, estd;
-    table_details = IdSelector("tableBody");
-    console.log(table_details);
-    let table_rows = table_details.children;
-    Array.from(table_rows).forEach((row) => {
-        bookName = row.children[0].textContent;
-        author =row.children[1].textContent;
-        type = row.children[2].textContent;
-        price = row.children[3].textContent;
-        estd = row.children[4].textContent;
-        let obj = {
-            title : bookName,
-            author : author,
-            type : type,
-            price: price,
-            estd : estd
-        }
-        arr.push(obj);
-    })
-    console.log(arr)
-    localStorage.setItem("stored-books", JSON.stringify(arr));
+    if(stored_books !== null){
+     arr = JSON.parse(stored_books)
+    }else{
+        arr = []
+    }
+    
+    let displayBook = new DisplayBooks();
+    displayBook.localData(arr)
+    // localStorage.setItem("stored-books", JSON.stringify(arr));
 
-}  
+} 
+function deleteItem(item)  {
+    console.log(item)
+    let displayBook = new DisplayBooks();
+    displayBook.delete(item)
+    // showData();
+}
 window.addEventListener("load", () => {
     let stored_books = localStorage.getItem("stored-books");
     // console.log(stored_books);

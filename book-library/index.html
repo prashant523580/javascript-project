@@ -10,14 +10,14 @@
 </head>
 
 <body>
-    <div class="main-container">
+
         <nav>
-            <div class="right">
+            <div class="menu">
                 <div class="icon">icon</div>
             </div>
-            <div class="right">
+            <div class="search-form">
                 <form action="">
-                    <label for="searchBy">Search Type</label>
+                    <!-- <label for="searchBy">Search Type</label> -->
                     <select id="search-type" class="input-control">
                         <option disabled selected > --Select Type--</option>
                         <option value="title">Book Name</option>
@@ -31,48 +31,42 @@
             </div>
             
         </nav>
-    </div>
     <div class="container">
         <div id="alert-message"></div>
         <h1>book store</h1>
         <form  id="form">
             <div class="column">
-                <label for="name"> Book Name</label>
-                <input type="text" class="input-control" id="bookName">
-
+                <!-- <label for="name"> Book Name</label> -->
+                <input type="text" placeholder="Book Name" class="input-control" id="bookName">
             </div>
             <div class="column">
-                <label for="Author">Author</label>
-                <input type="text" class="input-control" id="Author">
-
+                <!-- <label for="Author">Author</label> -->
+                <input type="text" placeholder="Author" class="input-control" id="Author">
             </div>
             <div class="column">
-
-                <label for="selectRadioValue">Select Type</label>
+                <!-- <label for="selectRadioValue">Select Type</label> -->
                 <select name="" id="type">
+                    <option>--select-type</option>
                     <option value="programming">IT Computer Programming</option>
                     <option value="fiction">fiction</option>
                     <option value="cooking">cooking</option>
                 </select>
-                <!-- <div class="column">
-                                    <input type="radio" class="radio-control" name="select">first value 
-                                    <input type="radio" name="select">second value
-                                    <input type="radio" name="select">third value
-
-                </div> -->
             </div>
             <div class="column">
-                <label for="price">Price</label>
-                <input type="text" id="price" class="input-control">
+                <!-- <label for="price">Price</label> -->
+                <input type="text" placeholder="Price" id="price" class="input-control">
             </div>
             <div class="column">
-                <label for="estd">Established</label>
+                <!-- <label for="estd">Established</label> -->
                 <input type="date" id="estd" class="input-control cal">
             </div>
-            <button id="addBook">Add book</button>
+            <div class="column">
+                <button id="addBook">Add book</button>
+            </div>
         </form>
+        <h1>books</h1>
         <div id="table">
-            <h1>books</h1>
+            
             <table>
                 <thead>
                     <tr>
@@ -81,6 +75,7 @@
                         <th scope="col" > Handle</th>
                         <th scope="col" >price</th>
                         <th scope="col" >Established</th>
+                        <th scope="col">edit</th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
@@ -88,7 +83,9 @@
             </table>
         </div>
     </div>
-
+    <footer>   
+        <p>All right Reserved.</p>
+    </footer>
     <!-- <script src="main.js"></script> -->
     <script src="./class.js"></script>
 </body>
