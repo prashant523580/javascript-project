@@ -1,42 +1,28 @@
-body{
-    font-family: 'Courier New', Courier, monospace;
+@import url('http://fonts.cdnfonts.com/css/led-digital-7');
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: rgba(225,225,225,0.6);
 }
-.calculator{
-    margin:  auto auto;
+
+.calculator {
+    margin: 0 auto;
     width: 300px;
-    background-color: rgb(12, 80, 90);
-    box-shadow: inset 0 0 2px 3px rgba(86, 8, 8, 0.4);
+    height: 320px;
+    background:linear-gradient( gray, rgb(139, 167, 172));
+    box-shadow:  15px 15px 20px rgba(0, 0, 0, 0.822);
     padding: 20px 5px;
     border-radius: 10px;
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
+
 }
-.calculator h1{
+
+.calculator h1 {
     text-align: center;
     text-transform: capitalize;
     color: rgb(214, 214, 214);
 }
-button{
-    margin: 2px;
-    width: 70px;
-    height: 50px;
-    padding: 12px 16px;
-    text-align: center;
-    background-color: rgb(255, 254, 254);
-    color: rgb(0, 0, 0);
-    border-radius: 4px;
-    outline: 0;
-    border: 0;
-    font-size: 1.3rem;
-    box-shadow: 0 2px 3px 0px rgb(14, 5, 5);
-    cursor: pointer;
-}
-button:active{
-    box-shadow: inset 0 0px 5px 2px rgb(116, 115, 115);
-}
-.output{
+
+.output {
     overflow: hidden;
     text-align: right;
     line-height: 15px;
@@ -46,39 +32,96 @@ button:active{
     border: 2px solid rgb(224, 213, 213);
     padding: 1.1rem 1.1rem;
     /* padding-right: 1rem; */
-    background-color: rgb(255, 255, 255);
-    color: rgb(31, 1, 1);
+    font-family: 'LED Digital 7', sans-serif;
+
+    background-color: rgb(0, 0, 0);
+    color: rgb(175, 174, 174);
     border-radius: 4px;
-    font-size: 1.4rem;
-    box-shadow: inset 0 0 3px 2px rgba(0,0,0,0.8);
+    font-size: 1.2em;
+    /* font-weight: bold; */
+    box-shadow: inset 0 0 3px 2px rgba(0, 0, 0, 0.8);
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
+
 }
-.keys{
-    display: flex;
+
+.keys {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-gap: 10px;
     justify-content: center;
-    margin-top: 1.4rem;
-}
-.clear{
-    width: 50%;
-    background-color: rgb(176, 148, 99);
-}
-.column{
-    display: flex;
-    /* justify-content: center; */
     align-items: center;
+    padding: 10px;
+}
+
+button {
+    /* margin: 2px; */
+    width: 60px;
+    height: 40px;
+    line-height: 5px;
+    padding: 12px 16px;
+    text-align: center;
+    color: rgb(253, 246, 246);
+    border-radius: 4px;
+    outline: 0;
+    border: 0;
+    font-family: 'LED Digital 7', sans-serif;
+    /* font-size: 1.3rem; */
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    box-shadow: 0 2px 3px 0px rgb(14, 5, 5);
+    cursor: pointer;
+    transition:all .2s ease;
+    background: linear-gradient(rgb(189, 187, 187),rgb(80, 91, 107));
     
 }
-.calculate{
-    margin-top: 3.5rem;
-    margin-left: -4.4rem;
-    height: 58.5%;
+
+button:nth-child(4){
+   
+    grid-area: 4 /4 /3 /4;
+}
+button:nth-child(5){
+   
+    grid-area: 1 /4 /3 /4;
+}
+button:nth-child(6){
+    height: 90px;
+    grid-area: 11 /4 /3 /4;
+}
+button:nth-child(7){
+    /* width: 100px; */
+    grid-area: 5 /3 /6 /3;
+}
+
+button:last-child{
+    /* grid-column: 4;
+    grid-row: 4; */
+}   
+button:active {
+    /* box-shadow:  0 0px 1px 1px rgb(192, 190, 190); */
+    transform: translatey(2px);
+    background: linear-gradient(rgb(27, 27, 27), white);
+}
+.operator{
+    background: linear-gradient(rgb(204, 212, 219),rgb(131, 120, 120));
+}
+.clear {
+    /* width: 50%; */
+    height: 100px;
+    background-color: rgb(176, 148, 99);
+}
+
+.calculate {
+    /* margin-top: 3.5rem; */
+    /* margin-left: 4.4rem; */
+    /* height: 58.5%; */
     background-color: antiquewhite;
 }
 
-.is-depressed{
+.is-depressed {
     background-color: rgb(81, 140, 120);
     color: white;
 }

@@ -41,7 +41,7 @@ keys.addEventListener('click', (e) => {
                 calculator.dataset.previousKeyType = "operator";
                 calculator.dataset.firstValue = displayedNum;
                 calculator.dataset.operator = action;
-                Array.from(key.parentNode.children).forEach( k => k.classList.remove("is-depressed"));
+                Array.from(key.parentNode.children).forEach(k => k.classList.remove("is-depressed"));
             }
             if (action === "decimal") {
                 //do nothing if output have dot 
@@ -71,19 +71,19 @@ keys.addEventListener('click', (e) => {
                 calculator.dataset.previousKeyType = "calculate";
             }
             if (action === "clear") {
-                if(key.textContent == "AC"){
-                    calculator.dataset.modValve ='';
+                if (key.textContent == "AC") {
+                    calculator.dataset.modValve = '';
                     calculator.dataset.previousKeyType = "";
-                    calculator.dataset.firstValue ='';
-                    calculator.dataset.operator ='';
-                }else{
-                    
+                    calculator.dataset.firstValue = '';
+                    calculator.dataset.operator = '';
+                } else {
+
                     key.textContent = "AC";
                 }
                 output.textContent = 0;
                 calculator.dataset.previousKeyType = "clear";
             }
-            if(action !== "clear"){
+            if (action !== "clear") {
                 const clearButton = document.querySelector("[data-action=clear]");
                 clearButton.textContent = "CE";
             }

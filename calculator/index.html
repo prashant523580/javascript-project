@@ -7,10 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body>
-    <h1>calculator</h1>
+    <center>
+
+        <h1>calculator</h1>
+    </center>
     <div class="calculator">
 
 
@@ -18,45 +23,36 @@
 
 
         <div class="keys">
-            <div class="row">
-
-                <div class="column">
-                    <button data-action="sub">-</button>
-                    <button data-action="div">/</button>
-                    <button data-action="mul">*</button>
-                    <button data-action="add">+</button>
-                </div>
-                <div class="column">
-                    
+       
+            <button class="operator" data-action="sub">-</button>
+            <button class="operator" data-action="div">/</button>
+            <button class="operator" data-action="mul">*</button>
+            <button class="operator" data-action="add">+</button>
+            <button class="operator clear" data-action="clear">AC</button>
+              
+                
+                    <!-- <button class="calculate" data-action="sqrt">sqrt</button> -->
+                    <button class="calculate operator" data-action="calculate">=</button>
+                    <button  class="calculate operator" data-action='calculate'>%</button>
                     <button>1</button>
                     <button>2</button>
                     <button>3</button>
-                </div>
-                <div class="column">
+     
                     <button>4</button>
                     <button>5</button>
                     <button>6</button>
                     
-                </div>
-                <div class="column">
-                    
+           
                     <button>7</button>
                     <button>9</button>
                     <button>8</button>
-                </div>
-                <div class="column">
-                    
+            
                     <button>0</button>
                     <button data-action="decimal">.</button>
-                    <button data-action="clear" class="clear">AC</button>
-                </div>
-            </div>
-                <div class="row">
-                    <!-- <button class="calculate" data-action="sqrt">sqrt</button> -->
-                    <button class="calculate" data-action='calculate'>%</button>
-                    <button class="calculate" data-action="calculate">=</button>
                     
-                </div>
+                    
+               
+            </div>
         </div>
     </div>
     <script src="./main.js"></script>
