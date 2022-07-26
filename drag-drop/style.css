@@ -1,8 +1,11 @@
 body{
-    display: flex;
+    /* display: flex; */
 }
 .main-container{
-
+    display: flex;
+}
+.container{
+    list-style-type: none;
     background-color: black;
     margin-left: 1rem;
     padding: .4rem .5rem;
@@ -40,7 +43,7 @@ body{
     /* display: none; */
     background-color: aqua;
     height: 0px;
-    transition: .3s ease: 
+    transition: .3s ease;
 }
 .drag-container:hover .div-child{
     height: 200px;

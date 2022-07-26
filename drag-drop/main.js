@@ -1,4 +1,4 @@
-let main_container = document.querySelectorAll(".main-container");
+let main_container = document.querySelectorAll(".container");
 let draggable = document.querySelectorAll(".draggable");
 let dragged = null;
 
