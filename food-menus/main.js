@@ -4,7 +4,7 @@ const menus = [
         title: "buttermilk pancakes",
         category : "breakfast",
         price: 300,
-        img: "./img/bg_waveline1.jpg",
+        img: "https://static01.nyt.com/images/2016/06/15/dining/15PANCAKEGUIDE3-WEB/15PANCAKEGUIDE3-WEB-articleLarge.jpg",
         desc: "Top Tutorials HTML Tutorial CSS Tutorial JavaScript Tutorial "
     },
     {
@@ -12,7 +12,7 @@ const menus = [
         title: "dinner double",
         category : "lunch",
         price: 500,
-        img: "./img/bg_waveline1.jpg",
+        img: "https://pyxis.nymag.com/v1/imgs/7f6/246/a2fa507ee9aafaadf0aef6e1932ed65223-30-grubstreet-takeout.rhorizontal.w700.jpg",
         desc: "Top Tutorials HTML Tutorial CSS Tutorial JavaScript Tutorial How To Tutorial SQL Tutorial Python Tutoria W3.CSS Tutorial"
     },
     {
@@ -29,7 +29,7 @@ const menus = [
         title: "veg momo",
         category : "breakfast",
         price: 500,
-        img: "./img/bg_waveline1.jpg",
+        img: "https://c.ndtvimg.com/2020-01/2brioi88_momos_625x300_21_January_20.jpg",
         desc: "Top Tutorials HTML Tutorial CSS Tutorial JavaScript Tutorial Tutorial"
     },
     {
@@ -37,7 +37,7 @@ const menus = [
         title: "chicken momo",
         category : "breakfast",
         price: 700,
-        img: "./img/bg_waveline1.jpg",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo1repfwZCGaIB-CMZNt7x750ipoIL3HDloA&usqp=CAU",
         desc: "Top Tutorials HTML Tutorial CSS Tutorial JavaScript Tutorial How To Tutorial SQL Tutorial Python Tutoria W3.CSS Tutorial"
     },
     {
